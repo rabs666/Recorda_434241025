@@ -28,9 +28,17 @@ class DashboardController extends Controller
 
         $recentOrders = Order::orderByDesc('created_at')->take(4)->get();
 
+        $chartOrders = Order::where('created_at', '>=', now()->subDays(90)->startOfDay())
+            ->get(['total', 'created_at'])
+            ->map(fn ($order) => [
+                'date' => $order->created_at->toDateString(),
+                'total' => (int) $order->total,
+            ])
+            ->values();
+
         return view('pages.dashboard', compact(
             'revenue', 'orderCount', 'userCount', 'activeProducts',
-            'topProducts', 'maxSold', 'recentOrders'
+            'topProducts', 'maxSold', 'recentOrders', 'chartOrders'
         ));
     }
 }

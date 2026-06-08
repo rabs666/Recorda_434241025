@@ -40,7 +40,7 @@
                 <button class="btn btn-light btn-compact" type="button" data-dashboard-range="90">90 Hari</button>
             </div>
         </div>
-        <div class="chart-placeholder" data-dashboard-chart>
+        <div class="chart-placeholder" data-dashboard-chart data-orders='@json($chartOrders)'>
             <span>Memuat grafik...</span>
         </div>
     </div>

@@ -681,3 +681,119 @@ if (userMenuTrigger && userMenuWrapper) {
 		}
 	});
 }
+
+// Admin dashboard sales chart
+const dashboardChart = document.querySelector('[data-dashboard-chart]');
+
+if (dashboardChart) {
+	const chartLabel = document.querySelector('[data-dashboard-chart-label]');
+	const rangeButtons = document.querySelectorAll('[data-dashboard-range]');
+
+	let orders = [];
+	try {
+		orders = JSON.parse(dashboardChart.dataset.orders || '[]');
+	} catch (error) {
+		orders = [];
+	}
+
+	const toKey = (date) => {
+		const year = date.getFullYear();
+		const month = String(date.getMonth() + 1).padStart(2, '0');
+		const day = String(date.getDate()).padStart(2, '0');
+		return `${year}-${month}-${day}`;
+	};
+
+	const buildSeries = (days) => {
+		const today = new Date();
+		today.setHours(0, 0, 0, 0);
+
+		const series = [];
+		const index = {};
+		for (let i = days - 1; i >= 0; i -= 1) {
+			const current = new Date(today);
+			current.setDate(today.getDate() - i);
+			const key = toKey(current);
+			const point = {
+				key,
+				label: current.toLocaleDateString('id-ID', { day: '2-digit', month: 'short' }),
+				value: 0,
+			};
+			series.push(point);
+			index[key] = point;
+		}
+
+		orders.forEach((order) => {
+			const point = index[order.date];
+			if (point) {
+				point.value += Number(order.total) || 0;
+			}
+		});
+
+		return series;
+	};
+
+	const renderSeries = (days) => {
+		const series = buildSeries(days);
+		const maxValue = Math.max(...series.map((item) => item.value), 1);
+		const width = 760;
+		const height = 220;
+		const paddingX = 28;
+		const paddingY = 24;
+		const usableWidth = width - paddingX * 2;
+		const usableHeight = height - paddingY * 2;
+
+		const points = series.map((item, i) => {
+			const x = paddingX + usableWidth * (series.length === 1 ? 0 : i / (series.length - 1));
+			const y = height - paddingY - (item.value / maxValue) * usableHeight;
+			return { ...item, x, y };
+		});
+
+		const linePoints = points.map((point) => `${point.x},${point.y}`).join(' ');
+		const baseline = height - paddingY;
+		const gridLines = [0.25, 0.5, 0.75]
+			.map((ratio) => {
+				const y = paddingY + usableHeight * ratio;
+				return `<line x1="${paddingX}" y1="${y}" x2="${width - paddingX}" y2="${y}" stroke="rgba(0,0,0,0.08)" stroke-dasharray="4 4"></line>`;
+			})
+			.join('');
+
+		// Tampilkan label tanggal secukupnya agar tidak menumpuk di rentang panjang.
+		const labelStep = Math.ceil(series.length / 12);
+		const labels = points
+			.map((point, i) =>
+				i % labelStep === 0
+					? `<text x="${point.x}" y="${height - 6}" text-anchor="middle" font-size="10" fill="#6E5B4C">${point.label}</text>`
+					: ''
+			)
+			.join('');
+
+		dashboardChart.innerHTML = `
+			<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Grafik penjualan ${days} hari terakhir" style="width: 100%; height: 100%;">
+				${gridLines}
+				<line x1="${paddingX}" y1="${baseline}" x2="${width - paddingX}" y2="${baseline}" stroke="rgba(0,0,0,0.16)"></line>
+				<polyline fill="none" stroke="#C75B35" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" points="${linePoints}"></polyline>
+				${points.map((point) => `<circle cx="${point.x}" cy="${point.y}" r="4" fill="#C75B35"></circle>`).join('')}
+				${labels}
+			</svg>
+		`;
+
+		if (chartLabel) {
+			chartLabel.textContent = `${days} hari terakhir`;
+		}
+	};
+
+	const setActiveRange = (days) => {
+		rangeButtons.forEach((button) => {
+			button.classList.toggle('is-active', button.dataset.dashboardRange === String(days));
+		});
+		renderSeries(days);
+	};
+
+	rangeButtons.forEach((button) => {
+		button.addEventListener('click', () => {
+			setActiveRange(parseInt(button.dataset.dashboardRange, 10) || 7);
+		});
+	});
+
+	setActiveRange(7);
+}
