@@ -5,6 +5,7 @@
 
 @section('admin_top_actions')
     <span class="admin-count">Total: {{ $users->count() }} pengguna</span>
+    <a class="btn btn-primary btn-compact" href="{{ route('recorda.users.create') }}">+ Tambah Pengguna</a>
 @endsection
 
 @section('content')
@@ -44,6 +45,7 @@
                 </span>
             </div>
             <div class="table-actions">
+                <a class="btn btn-light btn-compact" href="{{ route('recorda.users.edit', $user) }}">Edit</a>
                 <form method="POST" action="{{ route('recorda.users.toggleStatus', $user) }}" style="display:inline;">
                     @csrf
                     @method('PATCH')

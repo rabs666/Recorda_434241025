@@ -76,6 +76,10 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
     // Pengguna
     Route::get('/kelola-pengguna', [AdminUserController::class, 'index'])->name('recorda.manageUsers');
+    Route::get('/kelola-pengguna/tambah', [AdminUserController::class, 'create'])->name('recorda.users.create');
+    Route::post('/kelola-pengguna', [AdminUserController::class, 'store'])->name('recorda.users.store');
+    Route::get('/kelola-pengguna/{user}/edit', [AdminUserController::class, 'edit'])->name('recorda.users.edit');
+    Route::put('/kelola-pengguna/{user}', [AdminUserController::class, 'update'])->name('recorda.users.update');
     Route::patch('/kelola-pengguna/{user}/status', [AdminUserController::class, 'toggleStatus'])->name('recorda.users.toggleStatus');
     Route::patch('/kelola-pengguna/{user}/role', [AdminUserController::class, 'updateRole'])->name('recorda.users.updateRole');
     Route::delete('/kelola-pengguna/{user}', [AdminUserController::class, 'destroy'])->name('recorda.users.destroy');
