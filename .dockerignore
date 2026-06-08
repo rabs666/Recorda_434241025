@@ -1,0 +1,10 @@
+# Jangan ikutkan file lokal/berat ke image — semuanya dibangun ulang saat build.
+.git
+.github
+node_modules
+vendor
+.env
+.env.local
+storage/logs
+# Database lokal berisi data uji kamu; di server dibuat fresh dari seeder.
+database/database.sqlite
