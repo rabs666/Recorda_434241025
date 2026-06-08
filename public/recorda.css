@@ -2038,15 +2038,62 @@ p {
         min-height: auto;
         flex-direction: row;
         flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px 16px;
+        padding: 14px 16px;
     }
 
     .admin-menu {
         flex-direction: row;
         flex-wrap: wrap;
+        gap: 8px;
+        width: 100%;
+    }
+
+    .admin-link {
+        border-left: none;
+        border-bottom: 3px solid transparent;
+        padding: 8px 10px;
+    }
+
+    .admin-link.active {
+        border-left-color: transparent;
+        border-bottom-color: var(--terracotta-500);
+    }
+
+    .admin-footer {
+        display: none;
+    }
+
+    .admin-content {
+        padding: 18px 16px 40px;
+    }
+
+    .admin-topbar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .admin-topbar__actions {
+        flex-wrap: wrap;
+    }
+
+    .admin-tools {
+        width: 100%;
+    }
+
+    .admin-tools .input {
+        width: 100%;
     }
 
     .admin-stats {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .admin-table-scroll .table {
+        min-width: 640px;
     }
 
     .history-card {
