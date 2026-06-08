@@ -11,6 +11,10 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
+        // Di belakang proxy/HTTPS (Railway, dll): percayai header X-Forwarded-*
+        // supaya URL aset (CSS/JS) ikut https, bukan http (hindari mixed content).
+        $middleware->trustProxies(at: '*');
+
         $middleware->alias([
             'admin' => \App\Http\Middleware\EnsureAdmin::class,
         ]);
