@@ -1,28 +1,25 @@
 @extends('layouts.recorda')
 
-@section('title', 'Recorda - Detail Artikel')
+@section('title', 'Recorda - ' . $article->title)
 @section('body_class', 'page-article')
 
 @section('content')
-<section class="article-hero reveal">
+<section class="article-hero reveal" data-article-key="{{ $article->slug }}">
     <a class="back-link" href="{{ route('recorda.archive') }}">Kembali ke arsip</a>
-    <p class="eyebrow">Review</p>
-    <h1>Judul artikel panjang: Review album heavy serenade NMIXX</h1>
-    <p class="meta">Admin - 12 Mei 2026 - Review</p>
-    <div class="hero-image"></div>
+    <p class="eyebrow">{{ $article->category }}</p>
+    <h1>{{ $article->title }}</h1>
+    <p class="meta">{{ $article->author }} - {{ $article->displayDate() }} - {{ $article->category }}</p>
+    <div class="hero-image {{ $article->cover }}" @if($article->imageUrl()) style="background-image:url('{{ $article->imageUrl() }}'); background-size:cover; background-position:center;" @endif></div>
 </section>
 
-<section class="article-content reveal">
-    <p>Album ini dibuka dengan tekstur synth tebal yang langsung mengarah ke era 80an, tapi tetap punya punch modern dari drum yang presisi.</p>
-    <p>Di track kedua, vokal layered memberi ruang pada bassline yang santai, cocok untuk didengar di malam hari saat lampu kota mulai meredup.</p>
-    <div class="quote-block">
-        <p>Music gives a soul to the universe.</p>
-        <span class="mono">Recorda note</span>
-    </div>
-    <p>Secara keseluruhan, mixing terasa bersih dan detail, terutama di bagian chorus yang terasa lebih luas tanpa kehilangan fokus pada vokal utama.</p>
-    <p>Jika kamu suka pop dengan sentuhan brass dan atmosfer sinematik, album ini wajib ada di rak koleksi.</p>
+<section class="article-content reveal" data-article-body>
+    @if($article->excerpt)
+    <p class="lead">{{ $article->excerpt }}</p>
+    @endif
+    {!! $article->body !!}
 </section>
 
+@if($related->count())
 <section class="related reveal">
     <div class="section-head">
         <div>
@@ -31,22 +28,17 @@
         </div>
     </div>
     <div class="related-grid">
+        @foreach($related as $item)
         <article class="related-card">
-            <div class="related-thumb thumb-b"></div>
+            <div class="related-thumb {{ $item->cover }}" @if($item->imageUrl()) style="background-image:url('{{ $item->imageUrl() }}'); background-size:cover; background-position:center;" @endif></div>
             <div>
-                <p class="meta">Tips</p>
-                <h3>Checklist setup turntable pemula</h3>
-                <a class="text-link" href="{{ route('recorda.article') }}">Baca detail</a>
+                <p class="meta">{{ $item->category }}</p>
+                <h3>{{ $item->title }}</h3>
+                <a class="text-link" href="{{ route('recorda.article', $item->slug) }}">Baca detail</a>
             </div>
         </article>
-        <article class="related-card">
-            <div class="related-thumb thumb-c"></div>
-            <div>
-                <p class="meta">Review</p>
-                <h3>Soundstage vinyl jazz dan cara menikmati detailnya</h3>
-                <a class="text-link" href="{{ route('recorda.article') }}">Baca detail</a>
-            </div>
-        </article>
+        @endforeach
     </div>
 </section>
+@endif
 @endsection

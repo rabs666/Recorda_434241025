@@ -1,0 +1,24 @@
+.auth-photo {
+    height: 280px;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(59, 49, 42, 0.15);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 20px 0;
+}
+
+.page-auth.page-login .auth-photo {
+    background-image: url('{{ asset("images/auth-login-hero.jpg") }}');
+    background-color: #d4a574;
+}
+
+.page-auth.page-register .auth-photo {
+    background-image: url('{{ asset("images/auth-register-store.jpg") }}');
+    background-color: #3d2817;
+}
+
+.page-auth.page-forgot .auth-photo {
+    background-image: url('{{ asset("images/auth-forgot-store.jpg") }}');
+    background-color: #3d2817;
+}

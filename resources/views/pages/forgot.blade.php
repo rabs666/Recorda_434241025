@@ -1,7 +1,7 @@
 @extends('layouts.recorda')
 
 @section('title', 'Recorda - Lupa Password')
-@section('body_class', 'page-auth')
+@section('body_class', 'page-auth page-forgot')
 
 @section('content')
 <section class="auth-wrap reveal">
@@ -16,11 +16,12 @@
     <div class="auth-form">
         <h1>Lupa password?</h1>
         <p class="muted">Masukkan email terdaftar untuk menerima link reset password.</p>
-        <form class="form-stack" action="#" method="post">
+        <form class="form-stack" action="#" method="post" data-dummy-forgot>
             <label class="form-control">
                 <span>Email terdaftar</span>
-                <input class="input" type="email" placeholder="contoh@email.com">
+                <input class="input" type="email" placeholder="contoh@email.com" data-forgot-email required>
             </label>
+            <p class="form-feedback" data-forgot-feedback aria-live="polite"></p>
             <button class="btn btn-primary" type="submit">Kirim link reset password</button>
             <div class="notice">
                 <p class="mono">Cek inbox email kamu</p>

@@ -10,8 +10,8 @@
         <h1>Temukan koleksi album fisik yang punya cerita.</h1>
         <p class="lead">Katalog vinyl, CD, dan kaset dengan kurasi yang rapi, dari rilis klasik sampai rilisan baru.</p>
         <div class="hero-actions">
-            <a class="btn btn-primary" href="#katalog">Jelajahi katalog</a>
-            <a class="btn btn-ghost" href="#artikel">Baca artikel</a>
+            <a class="btn btn-primary" href="{{ route('recorda.catalog') }}">Jelajahi katalog</a>
+            <a class="btn btn-ghost" href="{{ route('recorda.archive') }}">Baca artikel</a>
         </div>
         <div class="hero-meta">
             <div class="meta-card">
@@ -47,65 +47,28 @@
             <h2>Featured Albums</h2>
             <p>Koleksi pilihan yang siap diputar.</p>
         </div>
-        <a class="text-link" href="#katalog">Lihat katalog</a>
+        <a class="text-link" href="{{ route('recorda.catalog') }}">Lihat katalog</a>
     </div>
     <div class="album-grid">
+        @forelse($featured as $product)
         <article class="album-card">
-            <div class="album-cover cover-a"></div>
+            <div class="album-cover {{ $product->cover }}" @if($product->imageUrl()) style="background-image:url('{{ $product->imageUrl() }}'); background-size:cover; background-position:center;" @endif></div>
             <div class="album-info">
                 <div>
-                    <h3>Abbey Road</h3>
-                    <p class="muted">The Beatles - Vinyl 1969</p>
+                    <h3>{{ $product->name }}</h3>
+                    <p class="muted">{{ $product->artist }} - {{ $product->format }} {{ $product->year }}</p>
                 </div>
-                <span class="price mono">Rp 450.000</span>
+                <span class="price mono">Rp {{ number_format($product->price, 0, ',', '.') }}</span>
             </div>
             <div class="album-tags">
-                <span class="chip">Vinyl</span>
-                <span class="chip">Rock</span>
+                <span class="chip">{{ $product->format }}</span>
+                <span class="chip">{{ $product->genre }}</span>
             </div>
+            <a class="btn btn-light" href="{{ route('recorda.product', $product->slug) }}" style="margin-top: 10px; width: 100%;">Detail</a>
         </article>
-        <article class="album-card">
-            <div class="album-cover cover-b"></div>
-            <div class="album-info">
-                <div>
-                    <h3>Rumours</h3>
-                    <p class="muted">Fleetwood Mac - CD 1977</p>
-                </div>
-                <span class="price mono">Rp 250.000</span>
-            </div>
-            <div class="album-tags">
-                <span class="chip">CD</span>
-                <span class="chip">Pop</span>
-            </div>
-        </article>
-        <article class="album-card">
-            <div class="album-cover cover-c"></div>
-            <div class="album-info">
-                <div>
-                    <h3>Blue Train</h3>
-                    <p class="muted">John Coltrane - Vinyl 1958</p>
-                </div>
-                <span class="price mono">Rp 520.000</span>
-            </div>
-            <div class="album-tags">
-                <span class="chip">Vinyl</span>
-                <span class="chip">Jazz</span>
-            </div>
-        </article>
-        <article class="album-card">
-            <div class="album-cover cover-d"></div>
-            <div class="album-info">
-                <div>
-                    <h3>After Hours</h3>
-                    <p class="muted">The Weeknd - Kaset 2020</p>
-                </div>
-                <span class="price mono">Rp 185.000</span>
-            </div>
-            <div class="album-tags">
-                <span class="chip">Kaset</span>
-                <span class="chip">Rnb</span>
-            </div>
-        </article>
+        @empty
+        <p class="muted">Belum ada produk.</p>
+        @endforelse
     </div>
 </section>
 
@@ -118,24 +81,19 @@
         <a class="text-link" href="{{ route('recorda.archive') }}">Ke arsip artikel</a>
     </div>
     <div class="article-list">
+        @forelse($articles as $article)
         <article class="article-card">
-            <div class="article-thumb thumb-a"></div>
+            <div class="article-thumb {{ $article->cover }}" @if($article->imageUrl()) style="background-image:url('{{ $article->imageUrl() }}'); background-size:cover; background-position:center;" @endif></div>
             <div class="article-body">
-                <p class="meta">Admin - 12 Mei 2026 - Review</p>
-                <h3>Review album heavy serenade NMIXX</h3>
-                <p class="muted">NMIXX melakukan debut terbarunya dengan warna synth dan brass yang tebal.</p>
-                <a class="text-link" href="{{ route('recorda.article') }}">Baca detail</a>
+                <p class="meta">{{ $article->author }} - {{ $article->displayDate() }} - {{ $article->category }}</p>
+                <h3>{{ $article->title }}</h3>
+                <p class="muted">{{ $article->excerpt }}</p>
+                <a class="text-link" href="{{ route('recorda.article', $article->slug) }}">Baca detail</a>
             </div>
         </article>
-        <article class="article-card">
-            <div class="article-thumb thumb-b"></div>
-            <div class="article-body">
-                <p class="meta">Admin - 10 Mei 2026 - Tips</p>
-                <h3>Checklist setup turntable pemula</h3>
-                <p class="muted">Mulai dari cartridge, stylus, sampai cara menjaga kebersihan piringan.</p>
-                <a class="text-link" href="{{ route('recorda.article') }}">Baca detail</a>
-            </div>
-        </article>
+        @empty
+        <p class="muted">Belum ada artikel.</p>
+        @endforelse
     </div>
 </section>
 
@@ -149,7 +107,7 @@
             <span>2 item</span>
             <span class="mono">Rp 820.000</span>
         </div>
-        <button class="btn btn-primary" type="button">Lanjut pembayaran</button>
+        <a class="btn btn-primary" href="{{ route('recorda.checkout') }}">Lanjut pembayaran</a>
     </div>
 </section>
 
@@ -158,13 +116,14 @@
         <h2>Newsletter Recorda</h2>
         <p>Update mingguan soal rilis baru, restock, dan promo kolektor.</p>
     </div>
-    <form class="newsletter-form" action="#" method="post">
-        <input class="input" type="email" name="email" placeholder="email kamu">
+    <form class="newsletter-form" action="#" method="post" data-newsletter-form>
+        <input class="input" type="email" name="email" placeholder="email kamu" data-newsletter-email required>
         <button class="btn btn-primary" type="submit">Subscribe</button>
     </form>
     <div class="newsletter-note">
         <p class="mono">Update mingguan</p>
         <p class="muted">Tanpa spam, kapan saja bisa berhenti.</p>
     </div>
+    <p class="form-feedback" data-newsletter-feedback aria-live="polite" style="margin-top: 12px;"></p>
 </section>
 @endsection
