@@ -663,3 +663,21 @@ if (cartListContainer) {
 	// Initial render
 	renderCart();
 }
+
+// User menu dropdown toggle
+const userMenuTrigger = document.querySelector('[data-user-menu-trigger]');
+const userMenuWrapper = document.querySelector('[data-user-menu-wrapper]');
+
+if (userMenuTrigger && userMenuWrapper) {
+	userMenuTrigger.addEventListener('click', (event) => {
+		event.stopPropagation();
+		userMenuWrapper.classList.toggle('is-open');
+	});
+
+	// Close menu when clicking outside
+	document.addEventListener('click', (event) => {
+		if (!userMenuWrapper.contains(event.target)) {
+			userMenuWrapper.classList.remove('is-open');
+		}
+	});
+}
