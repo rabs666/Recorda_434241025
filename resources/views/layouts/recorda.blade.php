@@ -21,7 +21,6 @@
                 <img class="logo-symbol" src="{{ asset('recorda-logo.svg') }}" alt="Recorda logo">
                 <span class="logo-text">Recorda</span>
             </a>
-            <button class="nav-toggle" type="button" data-nav-toggle aria-label="Buka menu">&#9776;</button>
             <nav class="site-nav">
                 <a class="nav-link {{ request()->routeIs('recorda.home') ? 'active' : '' }}" href="{{ route('recorda.home') }}">Beranda</a>
                 <a class="nav-link {{ request()->routeIs('recorda.archive', 'recorda.article') ? 'active' : '' }}" href="{{ route('recorda.archive') }}">Artikel</a>

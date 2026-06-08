@@ -1627,11 +1627,3 @@ const renderDashboardChart = () => {
 
 document.addEventListener('DOMContentLoaded', renderDashboardChart);
 
-// ========== Navigasi Mobile (Hamburger) ==========
-const navToggle = document.querySelector('[data-nav-toggle]');
-const headerInner = document.querySelector('.site-header__inner');
-if (navToggle && headerInner) {
-    navToggle.addEventListener('click', () => {
-        headerInner.classList.toggle('nav-open');
-    });
-}

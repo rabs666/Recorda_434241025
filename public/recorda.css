@@ -1929,6 +1929,17 @@ p {
     .site-header__inner {
         flex-wrap: wrap;
         padding: 16px 24px;
+        row-gap: 12px;
+    }
+
+    .site-nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 16px 20px;
+        padding-top: 4px;
+        border-top: 1px solid rgba(59, 49, 42, 0.08);
     }
 
     .recorda-page {
@@ -2178,40 +2189,8 @@ p {
     -webkit-overflow-scrolling: touch;
 }
 
-/* Tombol hamburger (disembunyikan di desktop) */
-.nav-toggle {
-    display: none;
-    background: none;
-    border: 1px solid rgba(59, 49, 42, 0.2);
-    border-radius: 10px;
-    padding: 8px 12px;
-    font-size: 18px;
-    line-height: 1;
-    cursor: pointer;
-    color: inherit;
-}
-
 @media (max-width: 720px) {
     .admin-table-scroll .table {
         min-width: 680px;
-    }
-
-    .nav-toggle {
-        display: inline-flex;
-        align-items: center;
-        order: 3;
-        margin-left: auto;
-    }
-
-    .site-nav {
-        display: none;
-        width: 100%;
-        flex-direction: column;
-        gap: 8px;
-        padding-top: 12px;
-    }
-
-    .site-header__inner.nav-open .site-nav {
-        display: flex;
     }
 }

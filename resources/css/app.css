@@ -1921,6 +1921,17 @@ p {
     .site-header__inner {
         flex-wrap: wrap;
         padding: 16px 24px;
+        row-gap: 12px;
+    }
+
+    .site-nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 16px 20px;
+        padding-top: 4px;
+        border-top: 1px solid rgba(59, 49, 42, 0.08);
     }
 
     .recorda-page {
