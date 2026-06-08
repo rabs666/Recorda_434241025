@@ -29,7 +29,8 @@
     <div class="hero-media">
         <div class="hero-cover">
             <div class="cover-back"></div>
-            <div class="cover-main">
+            @php($abbeyPhoto = file_exists(public_path('images/products/abbey-road.jpg')) ? asset('images/products/abbey-road.jpg') : null)
+            <div class="cover-main {{ $abbeyPhoto ? 'has-photo' : '' }}" @if($abbeyPhoto) style="background-image:url('{{ $abbeyPhoto }}');" @endif>
                 <div class="cover-label">
                     <span class="mono">REC-048</span>
                     <span>Abbey Road</span>
