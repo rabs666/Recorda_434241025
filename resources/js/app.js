@@ -599,7 +599,7 @@ if (cartListContainer) {
 		});
 
 		// Attach event listeners to qty buttons
-		const qtyWrappers = cartListContainer.querySelectorAll('[data-qty]');
+		const qtyWrappers = cartListContainer.querySelectorAll('[data-cart-index]');
 		qtyWrappers.forEach((wrapper) => {
 			const valueElement = wrapper.querySelector('[data-qty-value]');
 			const buttons = wrapper.querySelectorAll('[data-qty-action]');
