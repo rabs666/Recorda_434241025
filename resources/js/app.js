@@ -378,13 +378,17 @@ addToCartButtons.forEach((button) => {
 	button.addEventListener('click', () => {
 		const productName = button.dataset.productName || 'Product';
 		const productPrice = button.dataset.productPrice || '0';
-		
+		const productSlug = button.dataset.productSlug || '';
+		const productImage = button.dataset.productImage || '';
+
 		// Simulate adding to cart (store in localStorage)
 		let cart = JSON.parse(localStorage.getItem('recorda_cart') || '[]');
 		cart.push({
 			id: Date.now(),
+			slug: productSlug,
 			name: productName,
-			price: productPrice,
+			price: parseInt(productPrice, 10) || 0,
+			image: productImage,
 			qty: 1
 		});
 		localStorage.setItem('recorda_cart', JSON.stringify(cart));
@@ -581,7 +585,7 @@ if (cartListContainer) {
 		cart.forEach((item, index) => {
 			const itemHTML = `
 				<article class="cart-item" data-cart-index="${index}">
-					<div class="cart-thumb cover-a"></div>
+					<div class="cart-thumb cover-a"${item.image ? ` style="background-image:url('${item.image}'); background-size:cover; background-position:center;"` : ''}></div>
 					<div class="cart-info">
 						<h3>${item.name}</h3>
 						<p class="muted">Album</p>
