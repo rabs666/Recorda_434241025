@@ -2224,3 +2224,145 @@ p {
 .user-menu-item:active {
     background: rgba(59, 49, 42, 0.1);
 }
+
+/* ===== Katalog: sidebar filter + kartu (sesuai wireframe) ===== */
+.btn-dark {
+    background: var(--ink-900);
+    color: var(--cream-50);
+    border-color: transparent;
+}
+.btn-dark:hover {
+    background: var(--ink-800);
+}
+
+.catalog-layout {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 32px;
+    align-items: start;
+}
+
+.catalog-filter {
+    position: sticky;
+    top: 24px;
+}
+.filter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    padding: 4px 0;
+}
+.filter-title {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--ink-900);
+}
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(59, 49, 42, 0.12);
+}
+.filter-label {
+    font-weight: 600;
+    color: var(--ink-800);
+    margin-bottom: 2px;
+}
+.filter-check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    color: var(--ink-800);
+}
+.filter-check input {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--terracotta-500);
+    cursor: pointer;
+}
+.filter-price {
+    width: 100%;
+}
+.filter-apply {
+    width: 100%;
+    margin-top: 4px;
+}
+.filter-reset {
+    text-align: center;
+    font-size: 13px;
+    color: var(--ink-800);
+    opacity: 0.7;
+    text-decoration: underline;
+}
+
+.catalog-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.catalog-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.catalog-toolbar .search-field {
+    flex: 1;
+}
+.catalog-sort {
+    width: auto;
+    min-width: 170px;
+    cursor: pointer;
+}
+
+.product-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.product-actions .btn-cart {
+    flex: 1;
+    padding: 10px 16px;
+}
+.product-actions .btn-detail {
+    padding: 10px 18px;
+}
+.catalog-empty {
+    grid-column: 1 / -1;
+    padding: 48px 0;
+    text-align: center;
+}
+
+@media (max-width: 960px) {
+    .catalog-layout {
+        grid-template-columns: 1fr;
+    }
+    .catalog-filter {
+        position: static;
+    }
+    .filter-form {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+    .filter-apply,
+    .filter-reset {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 600px) {
+    .catalog-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .catalog-sort {
+        width: 100%;
+    }
+    .filter-form {
+        grid-template-columns: 1fr;
+    }
+}
