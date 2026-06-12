@@ -2245,6 +2245,9 @@ p {
 .catalog-filter {
     position: sticky;
     top: 24px;
+    max-height: calc(100vh - 48px);
+    overflow-y: auto;
+    padding-right: 8px;
 }
 .filter-form {
     display: flex;
@@ -2342,6 +2345,9 @@ p {
     }
     .catalog-filter {
         position: static;
+        max-height: none;
+        overflow: visible;
+        padding-right: 0;
     }
     .filter-form {
         display: grid;
