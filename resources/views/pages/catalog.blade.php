@@ -23,7 +23,7 @@
     </div>
 </section>
 
-<div class="catalog-layout reveal">
+<div class="catalog-layout">
     {{-- Sidebar filter (server-side via GET) --}}
     <aside class="catalog-filter">
         <form method="GET" action="{{ route('recorda.catalog') }}" class="filter-form">
@@ -97,7 +97,7 @@
 
         <section class="catalog-grid">
             @forelse($products as $product)
-            <article class="product-card">
+            <article class="product-card reveal">
                 <a class="product-cover {{ $product->cover }}" href="{{ route('recorda.product', $product->slug) }}"
                     @if($product->imageUrl()) style="background-image:url('{{ $product->imageUrl() }}'); background-size:cover; background-position:center;" @endif></a>
                 <div class="product-body">
