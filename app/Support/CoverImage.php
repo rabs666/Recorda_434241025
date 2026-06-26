@@ -24,6 +24,16 @@ class CoverImage
      */
     public static function forProduct(string $slug, string $name, ?string $artist, int $index): string
     {
+        $jpgPath = 'images/covers/' . $slug . '.jpg';
+        if (file_exists(public_path($jpgPath))) {
+            return $jpgPath;
+        }
+
+        $pngPath = 'images/covers/' . $slug . '.png';
+        if (file_exists(public_path($pngPath))) {
+            return $pngPath;
+        }
+
         [$dark, $light] = self::PALETTES[$index % count(self::PALETTES)];
 
         $title = self::esc(self::shorten($name, 22));
