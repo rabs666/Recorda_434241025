@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recorda — Demo Reel</title>
+<link rel="preconnect" href="https://fonts.bunny.net">
+<link href="https://fonts.bunny.net/css?family=playfair-display:400,600,700,800|dm-sans:400,500,600,700|space-mono:400,700" rel="stylesheet">
+<style>
+:root{
+  --ink:#161311; --cream:#fbf7f1; --cream2:#f4ede3; --cream3:#e6d7c8;
+  --terra:#c75b35; --terra-d:#b14828; --olive:#6a7a4b; --brown:#3b2416;
+  --muted:#6d5f56;
+  --font-display:"Playfair Display",serif;
+  --font-ui:"DM Sans",sans-serif;
+  --font-mono:"Space Mono",monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:var(--font-ui); color:var(--ink); overflow:hidden;
+  background:
+    radial-gradient(circle at 18% 8%, rgba(199,91,53,.22), transparent 46%),
+    radial-gradient(circle at 82% 4%, rgba(106,122,75,.18), transparent 44%),
+    radial-gradient(circle at 72% 88%, rgba(199,91,53,.14), transparent 52%),
+    repeating-linear-gradient(120deg, rgba(22,19,17,.035), rgba(22,19,17,.035) 1px, transparent 1px, transparent 8px),
+    linear-gradient(180deg,#fbf7f1,#efe6da);
+}
+.stage{
+  position:fixed; inset:0; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; gap:30px; padding:42px 48px 96px;
+}
+
+/* ---------- top caption ---------- */
+.head{
+  position:absolute; top:30px; left:0; right:0; text-align:center; z-index:5;
+  pointer-events:none;
+}
+.brand{
+  display:inline-flex; align-items:center; gap:11px; margin-bottom:14px;
+}
+.brand .dot{
+  width:34px;height:34px;border-radius:50%;
+  background:conic-gradient(from 210deg,var(--ink),#2b231d 30%,var(--terra) 75%,var(--ink));
+  box-shadow:0 0 0 4px var(--cream), 0 0 0 5px rgba(22,19,17,.12);
+  position:relative;
+}
+.brand .dot::after{content:"";position:absolute;inset:13px;border-radius:50%;background:var(--cream);box-shadow:inset 0 0 0 2px rgba(22,19,17,.25)}
+.brand h1{font-family:var(--font-display);font-size:26px;font-weight:800;letter-spacing:-.01em}
+.cap{
+  font-family:var(--font-display); font-size:30px; font-weight:700; letter-spacing:-.01em;
+  opacity:0; transform:translateY(8px); transition:all .28s cubic-bezier(.16,1,.3,1);
+}
+.cap.show{opacity:1;transform:none}
+.sub{
+  margin-top:6px;font-size:14px;color:var(--muted);
+  opacity:0;transform:translateY(8px);transition:all .28s .03s cubic-bezier(.16,1,.3,1);
+}
+.sub.show{opacity:1;transform:none}
+
+/* ---------- devices ---------- */
+.devices{display:flex;align-items:center;justify-content:center;gap:54px;width:100%;flex:1;min-height:0;margin-top:70px}
+
+/* laptop */
+.laptop{position:relative;transition:transform .42s cubic-bezier(.16,1,.3,1),filter .42s,opacity .42s}
+.laptop .screen{
+  width:920px;height:575px;border-radius:18px;background:#0e0c0b;
+  padding:14px;box-shadow:0 40px 90px rgba(22,19,17,.30),0 0 0 2px #1c1714, inset 0 0 0 1px rgba(255,255,255,.05);
+}
+.laptop .glass{width:100%;height:100%;border-radius:7px;overflow:hidden;background:var(--cream);position:relative}
+.laptop .base{
+  width:1040px;height:22px;margin:0 auto;border-radius:0 0 16px 16px;
+  background:linear-gradient(180deg,#c9c2bb,#9a928b);
+  box-shadow:0 18px 30px rgba(22,19,17,.25);position:relative;left:-60px;
+}
+.laptop .base::after{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:150px;height:9px;border-radius:0 0 10px 10px;background:#7d756e}
+
+/* phone */
+.phone{position:relative;transition:transform .42s cubic-bezier(.16,1,.3,1),filter .42s,opacity .42s}
+.phone .body{
+  width:248px;height:520px;border-radius:42px;background:#0e0c0b;padding:11px;
+  box-shadow:0 40px 80px rgba(22,19,17,.32),0 0 0 2px #1c1714, inset 0 0 0 1px rgba(255,255,255,.05);
+  position:relative;
+}
+.phone .body::before{content:"";position:absolute;top:18px;left:50%;transform:translateX(-50%);width:78px;height:20px;border-radius:14px;background:#0e0c0b;z-index:3}
+.phone .glass{width:100%;height:100%;border-radius:32px;overflow:hidden;background:var(--cream);position:relative}
+
+/* iframe scaling wrappers */
+.frame-wrap{position:absolute;inset:0;overflow:hidden}
+iframe{border:0;position:absolute;top:0;left:0;background:var(--cream)}
+/* desktop: render 1440 wide scaled to 892px screen (892/1440 = .6194) */
+.laptop iframe{width:1440px;height:928px;transform:scale(.6194);transform-origin:top left}
+/* phone: render 390 wide scaled to 226px screen (226/390 = .5795) */
+.phone iframe{width:390px;height:898px;transform:scale(.5795);transform-origin:top left}
+
+.frame-wrap iframe{opacity:0;transition:opacity .28s ease}
+.frame-wrap.in iframe{opacity:1}
+
+/* focus states */
+.devices.focus-desktop .phone{transform:scale(.86) translateX(18px);filter:saturate(.85) brightness(.96);opacity:.78}
+.devices.focus-mobile .laptop{transform:scale(.92) translateX(-22px);filter:saturate(.85) brightness(.96);opacity:.8}
+
+/* loading shimmer */
+.shimmer{position:absolute;inset:0;z-index:2;pointer-events:none;opacity:0;transition:opacity .3s;
+  background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.5) 50%,transparent 70%);
+  background-size:220% 100%;animation:sh 1.1s linear infinite}
+.frame-wrap.loading .shimmer{opacity:.65}
+@keyframes sh{0%{background-position:120% 0}100%{background-position:-120% 0}}
+
+/* ---------- controls / progress ---------- */
+.bar{
+  position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:6;
+  display:flex;align-items:center;gap:16px;
+  background:rgba(255,255,255,.82);backdrop-filter:blur(10px);
+  border:1px solid rgba(22,19,17,.1);border-radius:999px;padding:9px 16px;
+  box-shadow:0 18px 40px rgba(22,19,17,.14);
+}
+.bar button{
+  border:0;background:transparent;cursor:pointer;color:var(--ink);
+  width:34px;height:34px;border-radius:50%;display:grid;place-items:center;
+  font-size:15px;transition:background .15s;
+}
+.bar button:hover{background:var(--cream3)}
+.bar .play{background:var(--terra);color:#fff;width:40px;height:40px}
+.bar .play:hover{background:var(--terra-d)}
+.dots{display:flex;gap:7px;align-items:center}
+.dots i{width:8px;height:8px;border-radius:50%;background:var(--cream3);cursor:pointer;transition:all .25s}
+.dots i.on{background:var(--terra);width:22px;border-radius:5px}
+.scene-no{font-family:var(--font-mono);font-size:12px;color:var(--muted);min-width:46px;text-align:center}
+
+.progress{position:absolute;top:0;left:0;height:3px;background:var(--terra);width:0;z-index:7;transition:width .12s linear}
+
+.hint{position:absolute;bottom:6px;left:0;right:0;text-align:center;font-size:11px;color:var(--muted);font-family:var(--font-mono);letter-spacing:.04em;z-index:6;opacity:.7}
+</style>
+</head>
+<body>
+<div class="progress" id="prog"></div>
+
+<div class="stage">
+  <div class="head">
+    <div class="brand"><span class="dot"></span><h1>Recorda</h1></div>
+    <div class="cap" id="cap">Music Record Store</div>
+    <div class="sub" id="sub">Beranda</div>
+  </div>
+
+  <div class="devices focus-desktop" id="devices">
+    <div class="laptop">
+      <div class="screen"><div class="glass">
+        <div class="frame-wrap loading" id="wd">
+          <iframe id="fd" title="desktop" scrolling="no"></iframe>
+          <div class="shimmer"></div>
+        </div>
+      </div></div>
+      <div class="base"></div>
+    </div>
+
+    <div class="phone">
+      <div class="body"><div class="glass">
+        <div class="frame-wrap loading" id="wm">
+          <iframe id="fm" title="mobile" scrolling="no"></iframe>
+          <div class="shimmer"></div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</div>
+
+<div class="bar">
+  <button id="prev" title="Sebelumnya">⏮</button>
+  <button class="play" id="play" title="Play/Pause">⏸</button>
+  <button id="next" title="Berikutnya">⏭</button>
+  <span class="scene-no" id="sceneNo">1 / 8</span>
+  <div class="dots" id="dots"></div>
+</div>
+<div class="hint">Tekan Spasi = play/pause · ← → ganti scene · Buka layar penuh (F11) lalu rekam layar untuk video</div>
+
+<script>
+const BASE = "https://recorda-production-4424.up.railway.app";
+// Pengali lama tampil tiap layar (1 = default, 1.5 = 50% lebih lama). Ubah di sini saja.
+const HOLD = 1.55;
+
+/* ----- Mockup halaman ADMIN (statis, pakai CSS asli Recorda) -----
+   Halaman admin butuh login, jadi iframe-live akan ke-redirect ke /login.
+   Solusinya: render markup admin asli + data contoh dari seeder, pakai recorda.css live. */
+function adminShell(pageTitle, active, content){
+  const menu=[["Dashboard","dashboard"],["Artikel","artikel"],["Produk","produk"],["Pengguna","pengguna"],["Transaksi","transaksi"]];
+  const links=menu.map(m=>`<a class="admin-link ${m[1]===active?'active':''}" href="#">${m[0]}</a>`).join("");
+  return `<!doctype html><html lang="id"><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.bunny.net">
+<link href="https://fonts.bunny.net/css?family=playfair-display:400,600,700,800|dm-sans:400,500,600,700|space-mono:400,700" rel="stylesheet">
+<link rel="stylesheet" href="${BASE}/recorda.css">
+</head><body class="recorda-body admin-body">
+<div class="admin-shell">
+  <aside class="admin-sidenav">
+    <div class="admin-brand">
+      <img class="logo-symbol" src="${BASE}/recorda-logo.svg" alt="Recorda logo">
+      <div class="admin-brand__text"><span class="logo-text">Recorda</span><span class="admin-subtitle">Admin Panel</span></div>
+    </div>
+    <nav class="admin-menu">${links}</nav>
+    <div class="admin-footer"><p class="muted">Terakhir update</p><p class="mono">25 Mei 2026</p></div>
+  </aside>
+  <div class="admin-content">
+    <div class="admin-topbar">
+      <div class="admin-topbar__title">${pageTitle}</div>
+      <div class="admin-topbar__actions">
+        <a class="btn btn-light btn-compact" href="#">Lihat Situs</a>
+        <button class="admin-account" type="button">Admin Recorda · Keluar</button>
+      </div>
+    </div>
+    <main class="admin-page">${content}</main>
+  </div>
+</div></body></html>`;
+}
+function statCard(label,val,note){return `<div class="stat-card"><p class="muted">${label}</p><h3>${val}</h3>${note?`<p class="mono">${note}</p>`:""}</div>`;}
+function badge(status){const m={selesai:"is-success",diproses:"is-warning",dikirim:"is-info",dibatalkan:"is-danger",menunggu:"is-pending"};const t=status.charAt(0).toUpperCase()+status.slice(1);return `<span class="status-badge ${m[status]||'is-pending'}">${t}</span>`;}
+
+const ADMIN_DASHBOARD = adminShell("Dashboard","dashboard",`
+<div class="admin-stats">
+  ${statCard("Total Revenue","Rp 4.820.000","Order selesai")}
+  ${statCard("Total Pesanan","7","Semua status")}
+  ${statCard("Pengguna","8","Terdaftar")}
+  ${statCard("Produk Aktif","32","Tampil di katalog")}
+</div>
+<div class="admin-grid">
+  <div class="panel">
+    <div class="panel-head"><div><h2>Grafik Penjualan</h2><p class="muted">7 hari terakhir</p></div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;"><button class="btn btn-light btn-compact is-active" type="button">7 Hari</button><button class="btn btn-light btn-compact" type="button">30 Hari</button><button class="btn btn-light btn-compact" type="button">90 Hari</button></div>
+    </div>
+    <div class="chart-placeholder" style="display:flex;align-items:flex-end;gap:14px;padding:20px;height:200px;">
+      ${[42,68,55,80,60,92,74].map((h,k)=>`<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;height:100%;justify-content:flex-end;"><div style="width:100%;height:${h}%;background:linear-gradient(180deg,#c75b35,#b14828);border-radius:8px 8px 0 0;"></div><span class="mono" style="font-size:11px;color:#6d5f56;">${['Sen','Sel','Rab','Kam','Jum','Sab','Min'][k]}</span></div>`).join("")}
+    </div>
+  </div>
+  <div class="panel">
+    <div class="panel-head"><h2>Produk Terlaris</h2></div>
+    <div class="progress-list">
+      ${[["ITZY - Crazy in Love",100,"12"],["NMIXX - Heavy Serenade",82,"9"],["BLACKPINK - Born Pink",70,"7"],["The Beatles - Abbey Road",55,"5"]].map(p=>`<div class="progress-item"><div><p>${p[0]}</p><div class="progress-bar"><span style="width:${p[1]}%;"></span></div></div><span class="mono">${p[2]} terjual</span></div>`).join("")}
+    </div>
+  </div>
+</div>
+<div class="panel">
+  <div class="panel-head"><h2>Transaksi Terbaru</h2></div>
+  <div class="admin-table-scroll"><div class="table">
+    <div class="table-row table-head columns-6"><div>Order ID</div><div>Pengguna</div><div>Tanggal</div><div>Total</div><div>Status</div><div>Aksi</div></div>
+    ${[["REC-048","Andy Rafaela","16 Jun 2026","Rp 320.000","selesai"],["REC-047","Budi Santoso","15 Jun 2026","Rp 410.000","diproses"],["REC-046","Sari Dewi","15 Jun 2026","Rp 640.000","menunggu"],["REC-045","Cahyo Pratama","14 Jun 2026","Rp 250.000","dikirim"]].map(o=>`<div class="table-row columns-6"><div class="mono">#${o[0]}</div><div>${o[1]}</div><div>${o[2]}</div><div class="mono">${o[3]}</div><div>${badge(o[4])}</div><div><a class="btn btn-light btn-compact" href="#">Kelola</a></div></div>`).join("")}
+  </div></div>
+</div>`);
+
+const ADMIN_PRODUK = adminShell("Kelola Produk","produk",`
+<div class="admin-tools"><input class="input" type="search" placeholder="Cari nama produk..."></div>
+<div class="admin-stats">${statCard("Total Produk","32")}${statCard("Stok Habis","2")}${statCard("Stok Rendah","4")}</div>
+<div class="panel"><div class="admin-table-scroll"><div class="table">
+  <div class="table-row table-head columns-8"><div>Img</div><div>Nama Produk</div><div>Kat.</div><div>Genre</div><div>Harga</div><div>Stok</div><div>Status</div><div>Aksi</div></div>
+  ${[
+    ["abbey-road.jpg","The Beatles - Abbey Road","Vinyl","Rock","Rp 480.000","12","Aktif","is-success"],
+    ["antifragile.svg","LE SSERAFIM - Antifragile","CD","K-Pop","Rp 185.000","8","Aktif","is-success"],
+    ["armageddon.svg","aespa - Armageddon","CD","K-Pop","Rp 195.000","3","Rendah","is-warning"],
+    ["ate.svg","STAYC - Teddy Bear","CD","K-Pop","Rp 175.000","0","Habis","is-danger"],
+    ["after-hours.svg","The Weeknd - After Hours","Vinyl","Pop","Rp 520.000","6","Aktif","is-success"],
+    ["attacca.svg","SEVENTEEN - Attacca","CD","K-Pop","Rp 189.000","5","Aktif","is-success"]
+  ].map(r=>`<div class="table-row columns-8"><div class="thumb-sm" style="background-image:url('${BASE}/images/covers/${r[0]}');background-size:cover;background-position:center;"></div><div>${r[1]}</div><div>${r[2]}</div><div>${r[3]}</div><div class="mono">${r[4]}</div><div>${r[5]}</div><div><span class="status-badge ${r[7]}">${r[6]}</span></div><div class="table-actions"><a class="btn btn-light btn-compact" href="#">Edit</a><button class="btn btn-danger btn-compact" type="button">Hapus</button></div></div>`).join("")}
+</div></div></div>`);
+
+const ADMIN_TRANSAKSI = adminShell("Kelola Transaksi","transaksi",`
+<div class="filter-bar">
+  ${["Semua","Menunggu","Diproses","Dikirim","Selesai","Dibatalkan"].map((f,k)=>`<a class="filter-button ${k===0?'is-active':''}" href="#">${f}</a>`).join("")}
+</div>
+<div class="admin-tools"><input class="input" type="search" placeholder="Order ID / Nama..."></div>
+<div class="panel"><div class="admin-table-scroll"><div class="table">
+  <div class="table-row table-head columns-7"><div>Order ID</div><div>Pengguna</div><div>Item</div><div>Tanggal</div><div>Total</div><div>Status</div><div>Ubah Status</div></div>
+  ${[
+    ["REC-048","Andy Rafaela","Abbey Road ×1","16 Jun 2026","Rp 480.000","selesai"],
+    ["REC-047","Budi Santoso","Blue Train ×1","15 Jun 2026","Rp 410.000","diproses"],
+    ["REC-046","Sari Dewi","The Album ×1, Abbey Road ×1","15 Jun 2026","Rp 640.000","menunggu"],
+    ["REC-045","Cahyo Pratama","Born Pink ×1","14 Jun 2026","Rp 250.000","dikirim"],
+    ["REC-044","Rina Lestari","Savage ×1","13 Jun 2026","Rp 185.000","dibatalkan"],
+    ["REC-043","Dodi Wijaya","Spicy ×2","12 Jun 2026","Rp 370.000","selesai"]
+  ].map(o=>`<div class="table-row columns-7"><div class="mono">#${o[0]}</div><div>${o[1]}</div><div>${o[2]}</div><div>${o[3]}</div><div class="mono">${o[4]}</div><div>${badge(o[5])}</div><div class="table-actions"><select class="input" style="padding:4px 8px;"><option ${o[5]==='menunggu'?'selected':''}>Menunggu</option><option ${o[5]==='diproses'?'selected':''}>Diproses</option><option ${o[5]==='dikirim'?'selected':''}>Dikirim</option><option ${o[5]==='selesai'?'selected':''}>Selesai</option><option ${o[5]==='dibatalkan'?'selected':''}>Dibatalkan</option></select></div></div>`).join("")}
+</div></div></div>`);
+
+const ADMIN_ARTIKEL = adminShell("Kelola Artikel","artikel",`
+<div class="admin-tools"><input class="input" type="search" placeholder="Cari judul artikel..."></div>
+<div class="panel"><div class="admin-table-scroll"><div class="table">
+  <div class="table-row table-head columns-6"><div>No</div><div>Judul Artikel</div><div>Kategori</div><div>Tanggal</div><div>Status</div><div>Aksi</div></div>
+  ${[
+    ["Review: Heavy Serenade — NMIXX","Review","12 Jun 2026","publish"],
+    ["Checklist Setup Turntable untuk Pemula","Tips","10 Jun 2026","publish"],
+    ["Vinyl vs CD vs Kaset: Mana untukmu?","Panduan","07 Jun 2026","publish"],
+    ["Restock Mingguan: Album K-Pop Terbaru","News","05 Jun 2026","draft"],
+    ["Merawat Koleksi Piringan Hitam","Tips","01 Jun 2026","publish"]
+  ].map((a,k)=>`<div class="table-row columns-6"><div>${k+1}</div><div>${a[0]}</div><div>${a[1]}</div><div>${a[2]}</div><div><span class="status-badge ${a[3]==='publish'?'is-success':'is-warning'}">${a[3]==='publish'?'Publish':'Draft'}</span></div><div class="table-actions"><a class="btn btn-light btn-compact" href="#">Edit</a><button class="btn btn-danger btn-compact" type="button">Hapus</button></div></div>`).join("")}
+</div></div></div>`);
+
+const ADMIN_PENGGUNA = adminShell("Kelola Pengguna","pengguna",`
+<div class="admin-tools"><input class="input" type="search" placeholder="Cari nama / email..."></div>
+<div class="panel"><div class="admin-table-scroll"><div class="table">
+  <div class="table-row table-head columns-6"><div>Nama</div><div>Email</div><div>Tgl Daftar</div><div>Role</div><div>Status</div><div>Aksi</div></div>
+  ${[
+    ["Admin Recorda","admin@recorda.com","01 Mei 2026","admin","aktif"],
+    ["User Recorda","user@recorda.com","02 Mei 2026","user","aktif"],
+    ["Andy Rafaela","andy@email.com","04 Mei 2026","user","aktif"],
+    ["Budi Santoso","budi@email.com","06 Mei 2026","user","aktif"],
+    ["Sari Dewi","sari@email.com","08 Mei 2026","admin","aktif"],
+    ["Cahyo Pratama","cahyo@email.com","10 Mei 2026","user","nonaktif"],
+    ["Rina Lestari","rina@email.com","12 Mei 2026","user","aktif"]
+  ].map(u=>`<div class="table-row columns-6"><div class="user-cell"><span class="user-avatar">${u[0].charAt(0).toUpperCase()}</span> <span>${u[0]}</span></div><div>${u[1]}</div><div>${u[2]}</div><div><select class="input" style="padding:4px 8px;"><option ${u[3]==='user'?'selected':''}>User</option><option ${u[3]==='admin'?'selected':''}>Admin</option></select></div><div><span class="status-badge ${u[4]==='aktif'?'is-success':'is-danger'}">${u[4].charAt(0).toUpperCase()+u[4].slice(1)}</span></div><div class="table-actions"><a class="btn btn-light btn-compact" href="#">Edit</a><button class="btn btn-light btn-compact" type="button">${u[4]==='aktif'?'Nonaktif':'Aktifkan'}</button><button class="btn btn-danger btn-compact" type="button">Hapus</button></div></div>`).join("")}
+</div></div></div>`);
+
+/* ----- Mockup halaman USER (butuh login: Pembayaran, History, Profil, Ubah Sandi) -----
+   Pakai header+footer asli + recorda.css live, jadi mandiri tanpa perlu login. */
+function publicShell(bodyClass, navActive, content, extraCss){
+  const nav=[["Beranda","beranda"],["Artikel","artikel"],["Katalog","katalog"],["Keranjang","keranjang"]];
+  const links=nav.map(n=>`<a class="nav-link ${n[1]===navActive?'active':''}" href="#">${n[0]}</a>`).join("");
+  return `<!doctype html><html lang="id"><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.bunny.net">
+<link href="https://fonts.bunny.net/css?family=playfair-display:400,600,700,800|dm-sans:400,500,600,700|space-mono:400,700" rel="stylesheet">
+<link rel="stylesheet" href="${BASE}/recorda.css">
+${extraCss?`<style>${extraCss}</style>`:""}
+</head><body class="recorda-body ${bodyClass}">
+<header class="site-header"><div class="site-header__inner">
+  <a class="logo" href="#"><img class="logo-symbol" src="${BASE}/recorda-logo.svg" alt="Recorda logo"><span class="logo-text">Recorda</span></a>
+  <nav class="site-nav">${links}</nav>
+  <div class="site-actions">
+    <a class="icon-button" href="#" aria-label="Cari"><span class="search-icon"></span></a>
+    <button class="btn btn-ghost" type="button"><span style="display:inline-block;width:18px;height:18px;margin-right:8px;background:currentColor;border-radius:50%;"></span>Pengguna Recorda</button>
+  </div>
+</div></header>
+<main class="recorda-page">${content}</main>
+<footer class="site-footer"><div class="site-footer__inner">
+  <div><h3>Recorda</h3><p>Music Record Store</p></div>
+  <div class="footer-links"><a href="#">Katalog produk</a><a href="#">Keranjang</a><a href="#">History transaksi</a><a href="#">Arsip artikel</a><a href="#">Login</a><a href="#">Daftar</a></div>
+  <div class="footer-meta"><p>Recorda UI concept 2026</p><p class="mono">W 1440 / H 1024</p></div>
+</div></footer>
+</body></html>`;
+}
+
+const PEMBAYARAN = publicShell("page-checkout","keranjang",`
+<section class="section"><div class="section-head"><div><h1>Pembayaran</h1><p class="lead">Lengkapi data pengiriman dan pilih metode pembayaran.</p></div><a class="text-link" href="#">Kembali ke keranjang</a></div>
+<div class="checkout-steps"><span class="step">1. Keranjang</span><span class="step is-active">2. Pembayaran</span><span class="step">3. Konfirmasi</span></div></section>
+<section class="checkout-layout">
+  <div class="checkout-form">
+    <div class="panel"><div class="panel-head"><h2>Informasi Pengiriman</h2></div>
+      <div class="form-grid"><label class="form-control"><span>Nama depan</span><input class="input" value="Andy"></label><label class="form-control"><span>Nama belakang</span><input class="input" value="Rafaela"></label></div>
+      <label class="form-control"><span>Alamat lengkap</span><input class="input" value="Jl. Diponegoro No. 12"></label>
+      <div class="form-grid"><label class="form-control"><span>Kota</span><input class="input" value="Surabaya"></label><label class="form-control"><span>Kode pos</span><input class="input" value="60111"></label></div>
+      <label class="form-control"><span>No. HP</span><input class="input" value="0812 3456 7890"></label>
+    </div>
+    <div class="panel"><div class="panel-head"><h2>Metode Pembayaran</h2></div>
+      <div class="payment-options">
+        <button class="payment-option is-active" type="button"><span class="payment-title">Transfer Bank</span><span class="muted">BCA · BNI · Mandiri</span></button>
+        <button class="payment-option" type="button"><span class="payment-title">E-Wallet</span><span class="muted">GoPay · OVO · Dana</span></button>
+        <button class="payment-option" type="button"><span class="payment-title">COD</span><span class="muted">Bayar di Tempat</span></button>
+      </div>
+    </div>
+  </div>
+  <aside class="summary-panel"><h2>Ringkasan Pesanan</h2><p class="muted">2 items</p>
+    <div class="summary-items">
+      <div class="summary-item"><div class="summary-thumb" style="background-image:url('${BASE}/images/covers/abbey-road.jpg');background-size:cover;background-position:center;"></div><div><p>The Beatles - Abbey Road</p><p class="muted" style="font-size:12px;">Qty: 1</p></div><span class="mono">Rp 480.000</span></div>
+      <div class="summary-item"><div class="summary-thumb" style="background-image:url('${BASE}/images/covers/antifragile.svg');background-size:cover;background-position:center;"></div><div><p>LE SSERAFIM - Antifragile</p><p class="muted" style="font-size:12px;">Qty: 1</p></div><span class="mono">Rp 185.000</span></div>
+    </div>
+    <div class="summary-list"><div class="summary-line"><span>Subtotal</span><span class="mono">Rp 665.000</span></div><div class="summary-line"><span>Ongkir</span><span class="mono">Rp 30.000</span></div><div class="summary-line"><strong>Total</strong><strong class="mono">Rp 695.000</strong></div></div>
+    <button class="btn btn-primary" type="button">Konfirmasi Pesanan</button>
+  </aside>
+</section>`);
+
+const HISTORY = publicShell("page-history","keranjang",`
+<section class="history-head"><div><p class="eyebrow">History Transaksi</p><h1>Semua pembelian kamu tersimpan rapi.</h1><p class="lead">Lihat status pesanan dan detail item pesanan kamu.</p></div><a class="btn btn-ghost" href="#">Belanja lagi</a></section>
+<div class="filter-bar history-filters">${["Semua","Menunggu","Diproses","Dikirim","Selesai","Dibatalkan"].map((f,k)=>`<button class="filter-button ${k===0?'is-active':''}" type="button">${f}</button>`).join("")}</div>
+<section class="history-list">
+  ${[
+    {code:"REC-048",date:"16 Jun 2026, 14:22",status:"selesai",items:[["The Beatles - Abbey Road",1,"Rp 480.000"]],total:"Rp 510.000"},
+    {code:"REC-042",date:"10 Jun 2026, 09:10",status:"selesai",items:[["NMIXX - Heavy Serenade",1,"Rp 189.000"],["aespa - Drama",1,"Rp 195.000"]],total:"Rp 414.000"},
+    {code:"REC-046",date:"05 Jun 2026, 19:40",status:"menunggu",items:[["BLACKPINK - The Album",1,"Rp 250.000"]],total:"Rp 280.000"}
+  ].map(o=>`<article class="panel" style="margin-bottom:16px;"><div class="panel-head"><div><p class="mono">#${o.code}</p><p class="muted">${o.date}</p></div>${badge(o.status)}</div><div class="table" style="margin-top:12px;">${o.items.map(it=>`<div class="summary-row"><span>${it[0]} × ${it[1]}</span><span class="mono">${it[2]}</span></div>`).join("")}</div><div class="summary-row" style="margin-top:10px;border-top:1px solid #eee;padding-top:10px;"><strong>Total</strong><strong class="mono">${o.total}</strong></div></article>`).join("")}
+</section>`);
+
+const ACCOUNT_CSS=`
+.account-container{display:grid;grid-template-columns:240px 1fr;gap:32px;max-width:1000px;margin:24px auto;padding:0 24px;}
+.account-nav{display:flex;flex-direction:column;gap:8px;}
+.account-nav-item{padding:12px 16px;border-radius:12px;color:var(--ink-700);}
+.account-nav-item.is-active{background:var(--cream-100);color:var(--ink-900);font-weight:600;}
+.account-section .section-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:24px;}
+.account-section h2{font-size:24px;margin-bottom:8px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.form-actions{display:flex;gap:12px;margin-top:24px;}
+.address-card{padding:16px;border:1px solid rgba(59,49,42,.15);border-radius:12px;margin-top:16px;}
+.address-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;}
+.address-header h3{margin:0;font-size:16px;}
+`;
+const PROFIL = publicShell("page-account","",`
+<section class="account-header"><div><p class="eyebrow">Akun Saya</p><h1>Kelola profil dan preferensi kamu.</h1><p class="lead">Update informasi pribadi, alamat, dan notifikasi.</p></div><a class="btn btn-ghost" href="#">Kembali ke beranda</a></section>
+<section class="account-container">
+  <div class="account-sidebar"><nav class="account-nav">
+    <a class="account-nav-item is-active" href="#">👤 Profil</a><a class="account-nav-item" href="#">📍 Alamat</a><a class="account-nav-item" href="#">🔔 Notifikasi</a><a class="account-nav-item" href="#">🔐 Kata Sandi</a>
+  </nav></div>
+  <div class="account-content"><div class="account-section is-active">
+    <div class="section-head"><h2>Informasi Profil</h2></div>
+    <form class="form-stack">
+      <div class="form-row"><label class="form-control"><span>Nama Lengkap</span><input class="input" value="Andy Rafaela"></label><label class="form-control"><span>Nama Pengguna</span><input class="input" value="andy.rafaela"></label></div>
+      <label class="form-control"><span>Email</span><input class="input" type="email" value="andy@email.com"></label>
+      <label class="form-control"><span>Nomor Telepon</span><input class="input" value="+62 812 3456 7890"></label>
+      <label class="form-control"><span>Jenis Kelamin</span><select class="input"><option selected>Laki-laki</option><option>Perempuan</option></select></label>
+      <div class="address-card"><div class="address-header"><h3>Alamat Utama</h3><span class="status-badge is-success">Default</span></div><p>Jl. Diponegoro No. 12, Surabaya 60111</p><p class="muted">Telepon: +62 812 3456 7890</p></div>
+      <div class="form-actions"><button class="btn btn-primary" type="button">Simpan Perubahan</button><button class="btn btn-ghost" type="button">Batalkan</button></div>
+    </form>
+  </div></div>
+</section>`, ACCOUNT_CSS);
+
+const CHANGEPW_CSS=`
+.change-password-container{max-width:600px;margin:24px auto;padding:0 24px;}
+.change-password-box{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:24px;}
+.change-password-form{background:var(--cream-50);padding:32px;border-radius:var(--radius-lg);margin-bottom:32px;}
+.input-with-button{display:flex;gap:8px;}.input-with-button .input{flex:1;}
+.password-toggle{padding:8px 16px;background:var(--white);border:1px solid rgba(59,49,42,.15);border-radius:8px;font-size:12px;font-weight:600;}
+.password-meter{height:6px;background:rgba(59,49,42,.1);border-radius:3px;margin-top:8px;overflow:hidden;}
+.password-meter>div{height:100%;background:linear-gradient(90deg,#c75b35,#b14828);width:var(--strength,0%);}
+.password-requirements{background:var(--white);padding:16px;border-radius:12px;margin-bottom:16px;border:1px solid rgba(59,49,42,.1);}
+.password-requirements ul{margin:0;padding:0;list-style:none;display:grid;gap:8px;}
+.password-requirements li{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--ink-700);}
+.requirement-check{display:inline-block;width:16px;height:16px;border-radius:50%;background:rgba(59,49,42,.1);text-align:center;line-height:16px;font-size:12px;}
+.form-actions{display:flex;gap:12px;margin-top:24px;}
+.security-tips{background:var(--cream-100);padding:24px;border-radius:var(--radius-lg);border-left:4px solid var(--terracotta-500);}
+.security-tips h2{margin-top:0;font-size:18px;}.security-tips ul{margin:0;padding:0 0 0 24px;}.security-tips li{margin-bottom:8px;}
+`;
+const UBAH_SANDI = publicShell("page-change-password","",`
+<section class="change-password-container">
+  <div class="change-password-box"><div><h1>Ubah Kata Sandi</h1><p class="muted">Perbarui kata sandi akun Recorda-mu untuk keamanan maksimal.</p></div><a class="text-link" href="#">← Kembali ke profil</a></div>
+  <div class="change-password-form"><form class="form-stack">
+    <label class="form-control"><span>Kata Sandi Saat Ini</span><div class="input-with-button"><input class="input" type="password" value="********"><button class="password-toggle" type="button">Lihat</button></div></label>
+    <label class="form-control"><span>Kata Sandi Baru</span><div class="input-with-button"><input class="input" type="password" value="************"><button class="password-toggle" type="button">Lihat</button></div><div class="password-meter"><div style="--strength:75%;"></div></div><p class="form-feedback">Kekuatan: Kuat</p></label>
+    <label class="form-control"><span>Konfirmasi Kata Sandi Baru</span><div class="input-with-button"><input class="input" type="password" value="************"><button class="password-toggle" type="button">Lihat</button></div></label>
+    <div class="password-requirements"><p class="muted">Kata sandi minimal harus:</p><ul><li><span class="requirement-check">✓</span> 8 karakter</li><li><span class="requirement-check">✓</span> Huruf besar (A-Z)</li><li><span class="requirement-check">✓</span> Huruf kecil (a-z)</li><li><span class="requirement-check">✓</span> Angka (0-9)</li></ul></div>
+    <div class="form-actions"><button class="btn btn-primary" type="button">Ubah Kata Sandi</button><button class="btn btn-ghost" type="button">Batalkan</button></div>
+  </form></div>
+  <div class="security-tips"><div><h2>Tips Keamanan</h2><ul><li>Gunakan kombinasi huruf, angka, dan simbol</li><li>Hindari informasi pribadi seperti nama atau tanggal lahir</li><li>Jangan gunakan kata sandi yang sama di platform lain</li><li>Ubah kata sandi secara berkala (minimal tiap 3 bulan)</li></ul></div></div>
+</section>`, CHANGEPW_CSS);
+
+// Tiap scene: path/html, judul, sub-keterangan, fokus device, durasi (ms)
+const SCENES = [
+  {path:"/",                  cap:"Beranda",            sub:"Temukan koleksi album fisik yang punya cerita", focus:"desktop", dur:6500},
+  {path:"/katalog",           cap:"Katalog Produk",     sub:"Vinyl · CD · Kaset — filter & jelajahi koleksi", focus:"desktop", dur:6500},
+  {path:"/produk/abbey-road", cap:"Detail Produk",      sub:"Info album, harga, stok & tombol beli",          focus:"desktop", dur:6500},
+  {path:"/keranjang",         cap:"Keranjang",          sub:"Ringkasan belanja sebelum checkout",            focus:"mobile",  dur:6000},
+  {html:PEMBAYARAN,           cap:"Pembayaran",         sub:"Data pengiriman + metode pembayaran",           focus:"desktop", dur:6500},
+  {html:HISTORY,              cap:"History Transaksi",  sub:"Status & detail semua pesanan kamu",            focus:"desktop", dur:6500},
+  {html:ADMIN_DASHBOARD,      cap:"Dashboard Admin",    sub:"Ringkasan revenue, pesanan, pengguna & produk", focus:"desktop", dur:6500},
+  {html:ADMIN_ARTIKEL,        cap:"Kelola Artikel",     sub:"Kelola review & tips — publish / draft",        focus:"desktop", dur:6000},
+  {html:ADMIN_PRODUK,         cap:"Kelola Produk",      sub:"CRUD katalog album oleh admin",                 focus:"desktop", dur:6000},
+  {html:ADMIN_PENGGUNA,       cap:"Kelola Pengguna",    sub:"Atur role & status akun pengguna",              focus:"desktop", dur:6000},
+  {html:ADMIN_TRANSAKSI,      cap:"Kelola Transaksi",   sub:"Pantau & ubah status pesanan masuk",            focus:"desktop", dur:6000},
+  {path:"/login",             cap:"Login",              sub:"Masuk untuk checkout & riwayat transaksi",      focus:"desktop", dur:4500},
+  {path:"/register",          cap:"Register",           sub:"Bergabung jadi anggota Recorda",                focus:"mobile",  dur:4500},
+  {path:"/lupa-password",     cap:"Lupa Password",      sub:"Reset kata sandi via email",                    focus:"desktop", dur:4500},
+  {html:PROFIL,               cap:"Profil Saya",        sub:"Kelola profil, alamat & preferensi",            focus:"desktop", dur:6500},
+  {html:UBAH_SANDI,           cap:"Ubah Kata Sandi",    sub:"Perbarui kata sandi akun",                      focus:"mobile",  dur:6000},
+  {path:"/",                  cap:"Recorda",            sub:"Music Record Store · Surabaya Timur",           focus:"desktop", dur:6000},
+];
+
+const fd=document.getElementById('fd'), fm=document.getElementById('fm');
+const wd=document.getElementById('wd'), wm=document.getElementById('wm');
+const cap=document.getElementById('cap'), sub=document.getElementById('sub');
+const devices=document.getElementById('devices');
+const prog=document.getElementById('prog');
+const dotsBox=document.getElementById('dots');
+const sceneNo=document.getElementById('sceneNo');
+const playBtn=document.getElementById('play');
+
+let i=0, playing=true, raf=null, sceneStart=0, lastKey={d:null,m:null};
+
+// build dots
+SCENES.forEach((_,k)=>{const d=document.createElement('i');d.onclick=()=>go(k);dotsBox.appendChild(d);});
+const dots=[...dotsBox.children];
+
+function sceneKey(s){ return s.html ? ("html:"+s.cap) : ("url:"+s.path); }
+
+function loadFrame(frame,wrap,s){
+  wrap.classList.add('loading'); wrap.classList.remove('in');
+  frame.onload=()=>{ wrap.classList.remove('loading'); wrap.classList.add('in'); };
+  if(s.html){ frame.removeAttribute('src'); frame.srcdoc=s.html; }
+  else { frame.removeAttribute('srcdoc'); frame.src=BASE+s.path; }
+}
+
+function render(){
+  const s=SCENES[i];
+  const key=sceneKey(s);
+  // captions
+  cap.classList.remove('show'); sub.classList.remove('show');
+  setTimeout(()=>{cap.textContent=s.cap; sub.textContent=s.sub; cap.classList.add('show'); sub.classList.add('show');},60);
+  // focus
+  devices.className='devices focus-'+s.focus;
+  // load frames only if konten berubah (hindari reload sia-sia)
+  if(lastKey.d!==key){ loadFrame(fd,wd,s); lastKey.d=key; }
+  if(lastKey.m!==key){ loadFrame(fm,wm,s); lastKey.m=key; }
+  // dots + counter
+  dots.forEach((d,k)=>d.classList.toggle('on',k===i));
+  sceneNo.textContent=(i+1)+" / "+SCENES.length;
+  sceneStart=performance.now();
+}
+
+function tick(now){
+  if(!playing){raf=requestAnimationFrame(tick);return;}
+  const s=SCENES[i];
+  const p=Math.min(1,(now-sceneStart)/(s.dur*HOLD));
+  prog.style.width=(p*100)+"%";
+  if(p>=1){ next(); }
+  raf=requestAnimationFrame(tick);
+}
+
+function go(k){ i=(k+SCENES.length)%SCENES.length; prog.style.width="0"; render(); }
+function next(){ go(i+1); }
+function prev(){ go(i-1); }
+function toggle(){ playing=!playing; playBtn.textContent=playing?"⏸":"▶"; if(playing)sceneStart=performance.now()-( (performance.now()-sceneStart) ); }
+
+document.getElementById('next').onclick=next;
+document.getElementById('prev').onclick=prev;
+playBtn.onclick=toggle;
+window.addEventListener('keydown',e=>{
+  if(e.code==="Space"){e.preventDefault();toggle();}
+  if(e.code==="ArrowRight")next();
+  if(e.code==="ArrowLeft")prev();
+});
+
+render();
+raf=requestAnimationFrame(tick);
+</script>
+</body>
+</html>
