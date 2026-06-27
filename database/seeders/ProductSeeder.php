@@ -839,6 +839,321 @@ class ProductSeeder extends Seeder
                     ['title' => 'Antri', 'duration' => '3:02'],
                 ],
             ],
+            'agterplaas-the-adams' => [
+                'name' => 'Agterplaas', 'artist' => 'The Adams', 'year' => 2019, 'format' => 'Vinyl 12"', 'price' => 450000, 'stock' => 7, 'label' => 'Belakang Teras Records', 'condition' => 'New', 'genre' => 'Indie', 'covers' => ['cover-a', 'cover-b', 'cover-c', 'cover-d'],
+                'description' => 'Album studio ketiga The Adams yang dinanti-nanti dengan hits Timur dan Pelantur.',
+                'tracklist' => [
+                    ['title' => 'Timur', 'duration' => '4:12'],
+                    ['title' => 'Pelantur', 'duration' => '3:45'],
+                    ['title' => 'Masa Disini', 'duration' => '3:58'],
+                ],
+            ],
+            'rotasi-the-adams' => [
+                'name' => 'Rotasi', 'artist' => 'The Adams', 'year' => 2005, 'format' => 'CD', 'price' => 155000, 'stock' => 10, 'label' => 'Aksara Records', 'condition' => 'New', 'genre' => 'Indie', 'covers' => ['cover-b', 'cover-c', 'cover-d', 'cover-a'],
+                'description' => 'Album legendaris The Adams yang memuat lagu hits Konservatif.',
+                'tracklist' => [
+                    ['title' => 'Konservatif', 'duration' => '3:32'],
+                    ['title' => 'Halo Beni', 'duration' => '3:15'],
+                    ['title' => 'Just', 'duration' => '2:58'],
+                ],
+            ],
+            'rimpang-erk' => [
+                'name' => 'Rimpang', 'artist' => 'Efek Rumah Kaca', 'year' => 2023, 'format' => 'CD', 'price' => 160000, 'stock' => 12, 'label' => 'Idiiw Records', 'condition' => 'New', 'genre' => 'Indie', 'covers' => ['cover-c', 'cover-d', 'cover-a', 'cover-b'],
+                'description' => 'Album penuh kritik sosial dan aransemen megah khas Efek Rumah Kaca.',
+                'tracklist' => [
+                    ['title' => 'Heroik', 'duration' => '4:02'],
+                    ['title' => 'Rimpang', 'duration' => '3:48'],
+                    ['title' => 'Manifesto', 'duration' => '4:21'],
+                ],
+            ],
+            'kamar-gelap-erk' => [
+                'name' => 'Kamar Gelap', 'artist' => 'Efek Rumah Kaca', 'year' => 2009, 'format' => 'CD', 'price' => 155000, 'stock' => 8, 'label' => 'Aksara Records', 'condition' => 'New', 'genre' => 'Indie', 'covers' => ['cover-d', 'cover-a', 'cover-b', 'cover-c'],
+                'description' => 'Album klasik Efek Rumah Kaca berisi hits Kenakalan Remaja di Era Informatika dan Mosi Tidak Percaya.',
+                'tracklist' => [
+                    ['title' => 'Tubuhmu Membiru Tragis', 'duration' => '3:45'],
+                    ['title' => 'Mosi Tidak Percaya', 'duration' => '3:52'],
+                    ['title' => 'Kamar Gelap', 'duration' => '3:30'],
+                ],
+            ],
+            'membangun-menghancurkan-feast' => [
+                'name' => 'Membangun & Menghancurkan', 'artist' => '.Feast', 'year' => 2024, 'format' => 'CD', 'price' => 165000, 'stock' => 15, 'label' => 'Sun Eater', 'condition' => 'New', 'genre' => 'Indie', 'covers' => ['cover-a', 'cover-b', 'cover-c', 'cover-d'],
+                'description' => 'Album terbaru .Feast yang eksplosif dan sarat refleksi sosial politik.',
+                'tracklist' => [
+                    ['title' => 'Konsekuens', 'duration' => '3:42'],
+                    ['title' => 'Politrik', 'duration' => '3:20'],
+                    ['title' => 'Runtuh', 'duration' => '4:02'],
+                ],
+            ],
+            'multiverses-feast' => [
+                'name' => 'Multiverses', 'artist' => '.Feast', 'year' => 2017, 'format' => 'CD', 'price' => 150000, 'stock' => 6, 'label' => 'Sun Eater', 'condition' => 'New', 'genre' => 'Indie', 'covers' => ['cover-b', 'cover-c', 'cover-d', 'cover-a'],
+                'description' => 'Album debut konseptual .Feast yang memperkenalkan sound rock keras dan lirik berbobot.',
+                'tracklist' => [
+                    ['title' => 'Sekte', 'duration' => '4:10'],
+                    ['title' => 'Kelelawar', 'duration' => '3:50'],
+                    ['title' => 'Wives of Soldiers', 'duration' => '3:42'],
+                ],
+            ],
+            'lelaku-fourtwnty' => [
+                'name' => 'Lelaku', 'artist' => 'Fourtwnty', 'year' => 2015, 'format' => 'CD', 'price' => 145000, 'stock' => 14, 'label' => 'Dewi Records', 'condition' => 'New', 'genre' => 'Indie', 'covers' => ['cover-c', 'cover-d', 'cover-a', 'cover-b'],
+                'description' => 'Album folk pop santai berisi lagu hits Fana Merah Jambu dan Aku Tenang.',
+                'tracklist' => [
+                    ['title' => 'Fana Merah Jambu', 'duration' => '3:25'],
+                    ['title' => 'Aku Tenang', 'duration' => '4:02'],
+                    ['title' => 'Hitam Putih', 'duration' => '3:50'],
+                ],
+            ],
+            'nalar-fourtwnty' => [
+                'name' => 'Nalar', 'artist' => 'Fourtwnty', 'year' => 2023, 'format' => 'CD', 'price' => 155000, 'stock' => 11, 'label' => 'Jawara Records', 'condition' => 'New', 'genre' => 'Indie', 'covers' => ['cover-d', 'cover-a', 'cover-b', 'cover-c'],
+                'description' => 'Album studio ketiga Fourtwnty dengan eksplorasi musik yang lebih dewasa.',
+                'tracklist' => [
+                    ['title' => 'Nalar', 'duration' => '3:38'],
+                    ['title' => 'Laras', 'duration' => '4:02'],
+                    ['title' => 'Mangu', 'duration' => '3:15'],
+                ],
+            ],
+            'taifun-barasuara' => [
+                'name' => 'Taifun', 'artist' => 'Barasuara', 'year' => 2015, 'format' => 'CD', 'price' => 155000, 'stock' => 9, 'label' => 'Demajors', 'condition' => 'New', 'genre' => 'Indie', 'covers' => ['cover-a', 'cover-b', 'cover-c', 'cover-d'],
+                'description' => 'Album debut rock dahsyat dari Barasuara yang mengguncang panggung musik tanah air.',
+                'tracklist' => [
+                    ['title' => 'Sendu Melagu', 'duration' => '4:10'],
+                    ['title' => 'Bahas Bahasa', 'duration' => '3:50'],
+                    ['title' => 'Api & Lentera', 'duration' => '3:45'],
+                ],
+            ],
+            'wsatcc-2020' => [
+                'name' => '2020', 'artist' => 'White Shoes & The Couples Company', 'year' => 2020, 'format' => 'Vinyl 12"', 'price' => 440000, 'stock' => 5, 'label' => 'Demajors', 'condition' => 'New', 'genre' => 'Indie', 'covers' => ['cover-b', 'cover-c', 'cover-d', 'cover-a'],
+                'description' => 'Album bernuansa sinematik klasik retro Jakarta era 70an dari WSATCC.',
+                'tracklist' => [
+                    ['title' => 'Folk Song', 'duration' => '3:45'],
+                    ['title' => 'Halaman Ekstra', 'duration' => '3:20'],
+                    ['title' => 'Variasi Barong', 'duration' => '4:12'],
+                ],
+            ],
+            'telisik-danilla' => [
+                'name' => 'Telisik', 'artist' => 'Danilla', 'year' => 2014, 'format' => 'CD', 'price' => 150000, 'stock' => 10, 'label' => 'Demajors', 'condition' => 'New', 'genre' => 'Indie', 'covers' => ['cover-c', 'cover-d', 'cover-a', 'cover-b'],
+                'description' => 'Album bossa nova pop manis debut Danilla Riyadi dengan vokal sensualnya.',
+                'tracklist' => [
+                    ['title' => 'Buaian', 'duration' => '4:02'],
+                    ['title' => 'Ada Di Sana', 'duration' => '3:45'],
+                    ['title' => 'Senja Di Ambang Pilu', 'duration' => '4:15'],
+                ],
+            ],
+            'pop-seblay-danilla' => [
+                'name' => 'Pop Seblay', 'artist' => 'Danilla', 'year' => 2022, 'format' => 'CD', 'price' => 160000, 'stock' => 8, 'label' => 'Sorai', 'condition' => 'New', 'genre' => 'Indie', 'covers' => ['cover-d', 'cover-a', 'cover-b', 'cover-c'],
+                'description' => 'Album eksplorasi pop eksentrik yang fun dan personal dari Danilla.',
+                'tracklist' => [
+                    ['title' => 'MPV', 'duration' => '3:25'],
+                    ['title' => 'Batas', 'duration' => '3:40'],
+                    ['title' => 'Dalam Bidikan', 'duration' => '4:02'],
+                ],
+            ],
+            'walk-the-talk-pamungkas' => [
+                'name' => 'Walk The Talk', 'artist' => 'Pamungkas', 'year' => 2018, 'format' => 'CD', 'price' => 160000, 'stock' => 15, 'label' => 'Maspam Records', 'condition' => 'New', 'genre' => 'Pop', 'covers' => ['cover-a', 'cover-b', 'cover-c', 'cover-d'],
+                'description' => 'Album debut pamungkas dengan hit global To The Bone dan One Only.',
+                'tracklist' => [
+                    ['title' => 'One Only', 'duration' => '4:15'],
+                    ['title' => 'To The Bone', 'duration' => '5:30'],
+                    ['title' => 'Sorry', 'duration' => '3:48'],
+                ],
+            ],
+            'flying-solo-pamungkas' => [
+                'name' => 'Flying Solo', 'artist' => 'Pamungkas', 'year' => 2019, 'format' => 'CD', 'price' => 165000, 'stock' => 13, 'label' => 'Maspam Records', 'condition' => 'New', 'genre' => 'Pop', 'covers' => ['cover-b', 'cover-c', 'cover-d', 'cover-a'],
+                'description' => 'Album studio kedua Pamungkas yang semakin melambungkan namanya di kancah musik nasional.',
+                'tracklist' => [
+                    ['title' => 'Flying Solo', 'duration' => '3:45'],
+                    ['title' => 'Modern Love', 'duration' => '4:02'],
+                    ['title' => 'Lover Stay', 'duration' => '3:50'],
+                ],
+            ],
+            'the-brandals-self-titled' => [
+                'name' => 'The Brandals', 'artist' => 'The Brandals', 'year' => 2003, 'format' => 'CD', 'price' => 145000, 'stock' => 7, 'label' => 'Sirkus Records', 'condition' => 'New', 'genre' => 'Rock', 'covers' => ['cover-c', 'cover-d', 'cover-a', 'cover-b'],
+                'description' => 'Album debut garage rock mentah legendaris dari band asal Jakarta, The Brandals.',
+                'tracklist' => [
+                    ['title' => '100 Derajat Celcius', 'duration' => '3:12'],
+                    ['title' => 'Lingkar Setan', 'duration' => '3:45'],
+                    ['title' => 'Vini Vidi Vici', 'duration' => '3:20'],
+                ],
+            ],
+            'my-diary-mocca' => [
+                'name' => 'My Diary', 'artist' => 'Mocca', 'year' => 2002, 'format' => 'CD', 'price' => 150000, 'stock' => 10, 'label' => 'FFWD Records', 'condition' => 'New', 'genre' => 'Pop', 'covers' => ['cover-d', 'cover-a', 'cover-b', 'cover-c'],
+                'description' => 'Album pop jazz manis bernuansa vintage dari Mocca berisi hits Secret Admirer.',
+                'tracklist' => [
+                    ['title' => 'Once Upon a Time', 'duration' => '2:12'],
+                    ['title' => 'Secret Admirer', 'duration' => '3:50'],
+                    ['title' => 'Me and My Boyfriend', 'duration' => '3:25'],
+                ],
+            ],
+            'folklore-taylor-swift' => [
+                'name' => 'folklore', 'artist' => 'Taylor Swift', 'year' => 2020, 'format' => 'Vinyl 12"', 'price' => 470000, 'stock' => 9, 'label' => 'Republic Records', 'condition' => 'New', 'genre' => 'Pop', 'covers' => ['cover-a', 'cover-b', 'cover-c', 'cover-d'],
+                'description' => 'Album studio kedelapan Taylor Swift dengan nuansa indie folk yang hangat dan introspektif.',
+                'tracklist' => [
+                    ['title' => 'the 1', 'duration' => '3:30'],
+                    ['title' => 'cardigan', 'duration' => '3:59'],
+                    ['title' => 'exile (feat. Bon Iver)', 'duration' => '4:45'],
+                ],
+            ],
+            'lover-taylor-swift' => [
+                'name' => 'Lover', 'artist' => 'Taylor Swift', 'year' => 2019, 'format' => 'CD', 'price' => 210000, 'stock' => 12, 'label' => 'Republic Records', 'condition' => 'New', 'genre' => 'Pop', 'covers' => ['cover-b', 'cover-c', 'cover-d', 'cover-a'],
+                'description' => 'Album pop warna-warni yang merayakan cinta dalam segala bentuknya.',
+                'tracklist' => [
+                    ['title' => 'Cruel Summer', 'duration' => '2:58'],
+                    ['title' => 'Lover', 'duration' => '3:41'],
+                    ['title' => 'ME! (feat. Brendon Urie)', 'duration' => '3:13'],
+                ],
+            ],
+            'reputation-taylor-swift' => [
+                'name' => 'reputation', 'artist' => 'Taylor Swift', 'year' => 2017, 'format' => 'CD', 'price' => 215000, 'stock' => 8, 'label' => 'Big Machine Records', 'condition' => 'New', 'genre' => 'Pop', 'covers' => ['cover-c', 'cover-d', 'cover-a', 'cover-b'],
+                'description' => 'Album pop synth dark yang berani dan mendominasi charts.',
+                'tracklist' => [
+                    ['title' => '...Ready for It?', 'duration' => '3:28'],
+                    ['title' => 'Delicate', 'duration' => '3:52'],
+                    ['title' => 'Look What You Made Me Do', 'duration' => '3:31'],
+                ],
+            ],
+            'red-taylors-version' => [
+                'name' => 'Red (Taylor\'s Version)', 'artist' => 'Taylor Swift', 'year' => 2021, 'format' => 'Vinyl 12"', 'price' => 520000, 'stock' => 6, 'label' => 'Republic Records', 'condition' => 'New', 'genre' => 'Pop', 'covers' => ['cover-d', 'cover-a', 'cover-b', 'cover-c'],
+                'description' => 'Perekaman ulang album Red legendaris dengan tambahan track berdurasi 10 menit.',
+                'tracklist' => [
+                    ['title' => 'State of Grace (Taylor\'s Version)', 'duration' => '5:22'],
+                    ['title' => 'Red (Taylor\'s Version)', 'duration' => '3:43'],
+                    ['title' => 'All Too Well (10 Minute Version)', 'duration' => '10:13'],
+                ],
+            ],
+            '1989-taylors-version' => [
+                'name' => '1989 (Taylor\'s Version)', 'artist' => 'Taylor Swift', 'year' => 2023, 'format' => 'Vinyl 12"', 'price' => 490000, 'stock' => 11, 'label' => 'Republic Records', 'condition' => 'New', 'genre' => 'Pop', 'covers' => ['cover-a', 'cover-b', 'cover-c', 'cover-d'],
+                'description' => 'Rekaman ulang album pop terlaris Taylor Swift 1989 dengan track baru dari Vault.',
+                'tracklist' => [
+                    ['title' => 'Blank Space (Taylor\'s Version)', 'duration' => '3:51'],
+                    ['title' => 'Style (Taylor\'s Version)', 'duration' => '3:51'],
+                    ['title' => 'Is It Over Now? (Taylor\'s Version)', 'duration' => '3:49'],
+                ],
+            ],
+            'multiply-ed-sheeran' => [
+                'name' => 'x (Multiply)', 'artist' => 'Ed Sheeran', 'year' => 2014, 'format' => 'CD', 'price' => 195000, 'stock' => 9, 'label' => 'Asylum Records', 'condition' => 'New', 'genre' => 'Pop', 'covers' => ['cover-b', 'cover-c', 'cover-d', 'cover-a'],
+                'description' => 'Album terobosan Ed Sheeran dengan track hits Sing, Don\'t, dan Thinking Out Loud.',
+                'tracklist' => [
+                    ['title' => 'One', 'duration' => '4:13'],
+                    ['title' => 'Sing', 'duration' => '3:55'],
+                    ['title' => 'Thinking Out Loud', 'duration' => '4:41'],
+                ],
+            ],
+            'plus-ed-sheeran' => [
+                'name' => '+ (Plus)', 'artist' => 'Ed Sheeran', 'year' => 2011, 'format' => 'CD', 'price' => 185000, 'stock' => 5, 'label' => 'Asylum Records', 'condition' => 'New', 'genre' => 'Pop', 'covers' => ['cover-c', 'cover-d', 'cover-a', 'cover-b'],
+                'description' => 'Album debut manis Ed Sheeran yang akustik dan bernada folk pop hangat.',
+                'tracklist' => [
+                    ['title' => 'The A Team', 'duration' => '4:18'],
+                    ['title' => 'Lego House', 'duration' => '3:05'],
+                    ['title' => 'Give Me Love', 'duration' => '8:46'],
+                ],
+            ],
+            'equals-ed-sheeran' => [
+                'name' => '= (Equals)', 'artist' => 'Ed Sheeran', 'year' => 2021, 'format' => 'CD', 'price' => 200000, 'stock' => 10, 'label' => 'Asylum Records', 'condition' => 'New', 'genre' => 'Pop', 'covers' => ['cover-d', 'cover-a', 'cover-b', 'cover-c'],
+                'description' => 'Album pop modern yang catchy berisi lagu hits Bad Habits dan Shivers.',
+                'tracklist' => [
+                    ['title' => 'Tides', 'duration' => '3:15'],
+                    ['title' => 'Shivers', 'duration' => '3:27'],
+                    ['title' => 'Bad Habits', 'duration' => '3:51'],
+                ],
+            ],
+            'subtract-ed-sheeran' => [
+                'name' => '- (Subtract)', 'artist' => 'Ed Sheeran', 'year' => 2023, 'format' => 'Vinyl 12"', 'price' => 450000, 'stock' => 7, 'label' => 'Asylum Records', 'condition' => 'New', 'genre' => 'Pop', 'covers' => ['cover-a', 'cover-b', 'cover-c', 'cover-d'],
+                'description' => 'Album akustik minimalis yang emosional dan personal dari Ed Sheeran.',
+                'tracklist' => [
+                    ['title' => 'Boat', 'duration' => '3:05'],
+                    ['title' => 'Dusty', 'duration' => '3:42'],
+                    ['title' => 'Eyes Closed', 'duration' => '3:14'],
+                ],
+            ],
+            'guts-spilled' => [
+                'name' => 'GUTS (spilled)', 'artist' => 'Olivia Rodrigo', 'year' => 2024, 'format' => 'Vinyl 12"', 'price' => 480000, 'stock' => 8, 'label' => 'Geffen Records', 'condition' => 'New', 'genre' => 'Pop', 'covers' => ['cover-b', 'cover-c', 'cover-d', 'cover-a'],
+                'description' => 'Edisi deluxe album GUTS dengan tambahan track baru yang sangat dinanti fans.',
+                'tracklist' => [
+                    ['title' => 'obsessed', 'duration' => '2:50'],
+                    ['title' => 'girl i\'ve always been', 'duration' => '2:01'],
+                    ['title' => 'scared of my guitar', 'duration' => '4:24'],
+                ],
+            ],
+            'girls-aespa' => [
+                'name' => 'Girls', 'artist' => 'aespa', 'year' => 2022, 'format' => 'CD', 'price' => 190000, 'stock' => 14, 'label' => 'SM Entertainment', 'condition' => 'New', 'genre' => 'K-Pop', 'covers' => ['cover-c', 'cover-d', 'cover-a', 'cover-b'],
+                'description' => 'Mini album kedua aespa dengan konsep metaverse yang futuristik dan vokal powerful.',
+                'tracklist' => [
+                    ['title' => 'Girls', 'duration' => '3:40'],
+                    ['title' => 'Illusion', 'duration' => '3:15'],
+                    ['title' => 'Lingo', 'duration' => '2:36'],
+                ],
+            ],
+            'my-world-aespa' => [
+                'name' => 'MY WORLD', 'artist' => 'aespa', 'year' => 2023, 'format' => 'CD', 'price' => 195000, 'stock' => 12, 'label' => 'SM Entertainment', 'condition' => 'New', 'genre' => 'K-Pop', 'covers' => ['cover-d', 'cover-a', 'cover-b', 'cover-c'],
+                'description' => 'Mini album dengan vibe pop alternative yang segar dan hits Spicy.',
+                'tracklist' => [
+                    ['title' => 'Welcome To MY World', 'duration' => '3:27'],
+                    ['title' => 'Spicy', 'duration' => '3:17'],
+                    ['title' => 'Salty & Sweet', 'duration' => '3:22'],
+                ],
+            ],
+            'get-up-newjeans' => [
+                'name' => 'Get Up', 'artist' => 'NewJeans', 'year' => 2023, 'format' => 'CD', 'price' => 190000, 'stock' => 18, 'label' => 'ADOR', 'condition' => 'New', 'genre' => 'K-Pop', 'covers' => ['cover-a', 'cover-b', 'cover-c', 'cover-d'],
+                'description' => 'Mini album konseptual dengan track super hits Super Shy, ETA, dan Cool With You.',
+                'tracklist' => [
+                    ['title' => 'New Jeans', 'duration' => '1:48'],
+                    ['title' => 'Super Shy', 'duration' => '2:34'],
+                    ['title' => 'ETA', 'duration' => '2:31'],
+                ],
+            ],
+            'how-sweet-newjeans' => [
+                'name' => 'How Sweet', 'artist' => 'NewJeans', 'year' => 2024, 'format' => 'CD', 'price' => 195000, 'stock' => 15, 'label' => 'ADOR', 'condition' => 'New', 'genre' => 'K-Pop', 'covers' => ['cover-b', 'cover-c', 'cover-d', 'cover-a'],
+                'description' => 'Single album terbaru NewJeans dengan warna musik hip-hop/R&B old school.',
+                'tracklist' => [
+                    ['title' => 'How Sweet', 'duration' => '3:39'],
+                    ['title' => 'Bubble Gum', 'duration' => '3:20'],
+                    ['title' => 'How Sweet (Instrumental)', 'duration' => '3:39'],
+                ],
+            ],
+            'kill-this-love-blackpink' => [
+                'name' => 'Kill This Love', 'artist' => 'BLACKPINK', 'year' => 2019, 'format' => 'CD', 'price' => 200000, 'stock' => 9, 'label' => 'YG Entertainment', 'condition' => 'New', 'genre' => 'K-Pop', 'covers' => ['cover-c', 'cover-d', 'cover-a', 'cover-b'],
+                'description' => 'Mini album kedua BLACKPINK dengan brass band megah di track utama Kill This Love.',
+                'tracklist' => [
+                    ['title' => 'Kill This Love', 'duration' => '3:09'],
+                    ['title' => 'Don\'t Know What To Do', 'duration' => '3:22'],
+                    ['title' => 'Kick It', 'duration' => '3:12'],
+                ],
+            ],
+            'proof-bts' => [
+                'name' => 'Proof', 'artist' => 'BTS', 'year' => 2022, 'format' => 'CD', 'price' => 290000, 'stock' => 10, 'label' => 'BIGHIT MUSIC', 'condition' => 'New', 'genre' => 'K-Pop', 'covers' => ['cover-d', 'cover-a', 'cover-b', 'cover-c'],
+                'description' => 'Album antologi bersejarah BTS yang merangkum perjalanan karir 9 tahun mereka.',
+                'tracklist' => [
+                    ['title' => 'Yet To Come (The Most Beautiful Moment)', 'duration' => '3:13'],
+                    ['title' => 'Run BTS', 'duration' => '3:25'],
+                    ['title' => 'For Youth', 'duration' => '4:25'],
+                ],
+            ],
+            'seventeen-is-right-here' => [
+                'name' => '17 IS RIGHT HERE', 'artist' => 'SEVENTEEN', 'year' => 2024, 'format' => 'CD', 'price' => 250000, 'stock' => 14, 'label' => 'Pledis Entertainment', 'condition' => 'New', 'genre' => 'K-Pop', 'covers' => ['cover-a', 'cover-b', 'cover-c', 'cover-d'],
+                'description' => 'Album antologi terbaik SEVENTEEN yang memuat lagu baru MAESTRO.',
+                'tracklist' => [
+                    ['title' => 'MAESTRO', 'duration' => '3:18'],
+                    ['title' => 'LALALI', 'duration' => '2:51'],
+                    ['title' => 'Spell', 'duration' => '3:17'],
+                ],
+            ],
+            'the-book-of-us-entropy' => [
+                'name' => 'The Book of Us: Entropy', 'artist' => 'DAY6', 'year' => 2019, 'format' => 'CD', 'price' => 210000, 'stock' => 8, 'label' => 'JYP Entertainment', 'condition' => 'New', 'genre' => 'K-Pop', 'covers' => ['cover-b', 'cover-c', 'cover-d', 'cover-a'],
+                'description' => 'Album studio ketiga DAY6 dengan hits legendaris Sweet Chaos.',
+                'tracklist' => [
+                    ['title' => 'Sweet Chaos', 'duration' => '3:47'],
+                    ['title' => 'Deep in love', 'duration' => '3:45'],
+                    ['title' => 'Emergency', 'duration' => '3:18'],
+                ],
+            ],
+            'band-aid-day6' => [
+                'name' => 'Band Aid', 'artist' => 'DAY6', 'year' => 2024, 'format' => 'CD', 'price' => 215000, 'stock' => 15, 'label' => 'JYP Entertainment', 'condition' => 'New', 'genre' => 'K-Pop', 'covers' => ['cover-c', 'cover-d', 'cover-a', 'cover-b'],
+                'description' => 'Mini album terbaru DAY6 dengan vokal menyembuhkan dan hits Melt Down.',
+                'tracklist' => [
+                    ['title' => 'Melt Down', 'duration' => '3:09'],
+                    ['title' => 'Monster', 'duration' => '3:15'],
+                    ['title' => 'She Smiled', 'duration' => '3:30'],
+                ],
+            ],
         ];
     }
 }
