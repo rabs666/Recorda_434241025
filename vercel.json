@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "functions": {
+    "api/index.php": {
+      "runtime": "vercel-php@0.7.2"
+    }
+  },
+  "routes": [
+    {
+      "src": "/build/(.*)",
+      "dest": "/public/build/$1"
+    },
+    {
+      "src": "/images/(.*)",
+      "dest": "/public/images/$1"
+    },
+    {
+      "src": "/recorda-logo.svg",
+      "dest": "/public/recorda-logo.svg"
+    },
+    {
+      "src": "/recorda.css",
+      "dest": "/public/recorda.css"
+    },
+    {
+      "src": "/recorda.js",
+      "dest": "/public/recorda.js"
+    },
+    {
+      "src": "/robots.txt",
+      "dest": "/public/robots.txt"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/api/index.php"
+    }
+  ]
+}
