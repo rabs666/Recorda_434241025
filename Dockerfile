@@ -14,14 +14,13 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 WORKDIR /app
 COPY . .
 
-# Default environment untuk production (Railway bisa override via Variables di dashboard)
-ENV APP_ENV=production \
-    APP_DEBUG=false \
-    APP_KEY=base64:K3WTdmVIFuEpUjdssmlL0f+K9XGtv4j/Nvr7RhnGd1s=
-
-# Sediakan .env dasar (Railway tetap meng-override lewat Variables di dashboard),
-# install dependency PHP, siapkan file SQLite kosong & izin tulis.
-RUN cp -n .env.example .env \
+# Sediakan .env produksi: copy dari example, patch nilai production,
+# generate APP_KEY baru ke dalam .env, lalu install dependency.
+RUN cp .env.example .env \
+    && sed -i 's/^APP_ENV=.*/APP_ENV=production/' .env \
+    && sed -i 's/^APP_DEBUG=.*/APP_DEBUG=false/' .env \
+    && sed -i 's|^APP_URL=.*|APP_URL=https://recorda-production-4424.up.railway.app|' .env \
+    && sed -i 's/^APP_KEY=.*/APP_KEY=/' .env \
     && composer install --no-dev --optimize-autoloader --no-interaction --no-progress \
     && php artisan key:generate --force \
     && touch database/database.sqlite \
