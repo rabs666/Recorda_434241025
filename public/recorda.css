@@ -348,6 +348,12 @@ p {
     transform: rotate(-6deg);
 }
 
+.cover-back.has-photo {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .cover-main {
     position: absolute;
     width: 300px;

@@ -28,12 +28,14 @@
     </div>
     <div class="hero-media">
         <div class="hero-cover">
-            <div class="cover-back"></div>
-            @php($coverPhoto = file_exists(public_path('images/covers/heavy-serenade.jpg')) ? asset('images/covers/heavy-serenade.jpg') : (file_exists(public_path('images/products/heavy-serenade.jpg')) ? asset('images/products/heavy-serenade.jpg') : null))
-            <div class="cover-main {{ $coverPhoto ? 'has-photo' : '' }}" @if($coverPhoto) style="background-image:url('{{ $coverPhoto }}');" @endif>
+            @php($backCover = file_exists(public_path('images/covers/heavy-serenade.jpg')) ? asset('images/covers/heavy-serenade.jpg') : null)
+            <div class="cover-back {{ $backCover ? 'has-photo' : '' }}" @if($backCover) style="background-image:url('{{ $backCover }}');" @endif></div>
+            
+            @php($mainCover = file_exists(public_path('images/covers/abbey-road.jpg')) ? asset('images/covers/abbey-road.jpg') : null)
+            <div class="cover-main {{ $mainCover ? 'has-photo' : '' }}" @if($mainCover) style="background-image:url('{{ $mainCover }}');" @endif>
                 <div class="cover-label">
-                    <span class="mono">REC-042</span>
-                    <span>Heavy Serenade</span>
+                    <span class="mono">REC-048</span>
+                    <span>Abbey Road</span>
                 </div>
             </div>
             <div class="vinyl">
