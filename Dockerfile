@@ -1,5 +1,4 @@
-# Image produksi Recorda (Laravel + SQLite) untuk Railway / Render / hosting Docker.
-# Tidak butuh Node: layout sudah punya fallback ke public/recorda.css & recorda.js.
+# Image produksi Recorda (Laravel + SQLite) untuk Railway.
 FROM php:8.2-cli
 
 # Ekstensi PHP yang dibutuhkan Laravel + driver SQLite.
@@ -14,19 +13,13 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 WORKDIR /app
 COPY . .
 
-# Sediakan .env produksi: copy dari example, patch nilai production,
-# generate APP_KEY baru ke dalam .env, lalu install dependency.
-RUN cp .env.example .env \
-    && sed -i 's/^APP_ENV=.*/APP_ENV=production/' .env \
-    && sed -i 's/^APP_DEBUG=.*/APP_DEBUG=false/' .env \
-    && sed -i 's|^APP_URL=.*|APP_URL=https://recorda-production-4424.up.railway.app|' .env \
-    && sed -i 's|^APP_KEY=.*|APP_KEY=base64:K3WTdmVIFuEpUjdssmlL0f+K9XGtv4j/Nvr7RhnGd1s=|' .env \
+# Pakai .env.railway sebagai .env produksi (sudah include APP_KEY yang valid).
+RUN cp .env.railway .env \
     && composer install --no-dev --optimize-autoloader --no-interaction --no-progress \
     && touch database/database.sqlite \
     && chmod -R 777 storage bootstrap/cache database
 
-# Saat container start:
-# 1) symlink storage, 2) migrasi + seed database fresh, 3) jalankan server di $PORT dari Railway.
+# Saat container start: symlink storage, migrasi, lalu jalankan server.
 CMD php artisan storage:link || true; \
     php artisan migrate --force --seed || true; \
     php artisan serve --host=0.0.0.0 --port=${PORT:-8080}
