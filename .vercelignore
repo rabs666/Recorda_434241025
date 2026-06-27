@@ -1,8 +1,0 @@
-node_modules
-.git
-.gemini
-tests
-storage/logs
-.github
-.agents
-*.log

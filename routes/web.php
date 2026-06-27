@@ -93,6 +93,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/kelola-transaksi', [AdminTransactionController::class, 'index'])->name('recorda.manageTransactions');
     Route::patch('/kelola-transaksi/{order}/status', [AdminTransactionController::class, 'updateStatus'])->name('recorda.transactions.updateStatus');
 });
+
 Route::get('/clear-cache', function() {
     \Illuminate\Support\Facades\Artisan::call('optimize:clear');
     return 'Cache Laravel berhasil dihapus!';

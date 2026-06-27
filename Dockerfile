@@ -18,13 +18,12 @@ COPY . .
 # install dependency PHP, siapkan file SQLite kosong & izin tulis.
 RUN cp -n .env.example .env \
     && composer install --no-dev --optimize-autoloader --no-interaction --no-progress \
+    && php artisan key:generate --force \
     && touch database/database.sqlite \
     && chmod -R 777 storage bootstrap/cache database
 
 # Saat container start:
-# 1) generate APP_KEY kalau belum di-set, 2) symlink storage,
-# 3) migrasi + seed database fresh, 4) jalankan server di $PORT dari Railway.
-CMD [ -n "$APP_KEY" ] || php artisan key:generate --force; \
-    php artisan storage:link || true; \
+# 1) symlink storage, 2) migrasi + seed database fresh, 3) jalankan server di $PORT dari Railway.
+CMD php artisan storage:link || true; \
     php artisan migrate --force --seed || true; \
     php artisan serve --host=0.0.0.0 --port=${PORT:-8080}
