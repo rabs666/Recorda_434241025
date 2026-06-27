@@ -18,6 +18,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'home']);
 Route::get('/home', [HomeController::class, 'home'])->name('recorda.home');
 
+Route::get('/run-seed', function() {
+    \Illuminate\Support\Facades\Artisan::call('migrate:fresh', ['--seed' => true, '--force' => true]);
+    return 'Database refreshed and seeded!';
+});
+
 // Katalog & produk
 Route::get('/katalog', [HomeController::class, 'catalog'])->name('recorda.catalog');
 Route::get('/produk/{slug}', [ProductController::class, 'show'])->name('recorda.product');
