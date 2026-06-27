@@ -14,6 +14,11 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 WORKDIR /app
 COPY . .
 
+# Default environment untuk production (Railway bisa override via Variables di dashboard)
+ENV APP_ENV=production \
+    APP_DEBUG=false \
+    APP_KEY=base64:K3WTdmVIFuEpUjdssmlL0f+K9XGtv4j/Nvr7RhnGd1s=
+
 # Sediakan .env dasar (Railway tetap meng-override lewat Variables di dashboard),
 # install dependency PHP, siapkan file SQLite kosong & izin tulis.
 RUN cp -n .env.example .env \
