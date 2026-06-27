@@ -20,10 +20,8 @@ RUN cp .env.example .env \
     && sed -i 's/^APP_ENV=.*/APP_ENV=production/' .env \
     && sed -i 's/^APP_DEBUG=.*/APP_DEBUG=false/' .env \
     && sed -i 's|^APP_URL=.*|APP_URL=https://recorda-production-4424.up.railway.app|' .env \
-    && sed -i 's/^APP_KEY=.*/APP_KEY=/' .env \
+    && sed -i 's|^APP_KEY=.*|APP_KEY=base64:K3WTdmVIFuEpUjdssmlL0f+K9XGtv4j/Nvr7RhnGd1s=|' .env \
     && composer install --no-dev --optimize-autoloader --no-interaction --no-progress \
-    && php artisan key:generate --force \
-    && php artisan config:cache \
     && touch database/database.sqlite \
     && chmod -R 777 storage bootstrap/cache database
 
