@@ -551,6 +551,294 @@ class ProductSeeder extends Seeder
                     ['title' => 'Crown', 'duration' => '3:40'],
                 ],
             ],
+            'you-seem-pretty-sad' => [
+                'name' => 'You Seem Pretty Sad for a Girl So in Love', 'artist' => 'Olivia Rodrigo', 'year' => 2026, 'format' => 'Vinyl 12"', 'price' => 420000, 'stock' => 15, 'label' => 'Geffen Records', 'condition' => 'New', 'genre' => 'Pop', 'covers' => ['cover-a', 'cover-b', 'cover-c', 'cover-d'],
+                'description' => 'Studio album ketiga Olivia Rodrigo yang dirilis tahun 2026 dengan tema melankolis yang mendalam.',
+                'tracklist' => [
+                    ['title' => 'Drop Dead', 'duration' => '3:12'],
+                    ['title' => 'The Cure', 'duration' => '3:45'],
+                    ['title' => 'Stupid Song', 'duration' => '2:58'],
+                ],
+            ],
+            'sour' => [
+                'name' => 'SOUR', 'artist' => 'Olivia Rodrigo', 'year' => 2021, 'format' => 'CD', 'price' => 195000, 'stock' => 10, 'label' => 'Geffen Records', 'condition' => 'New', 'genre' => 'Pop', 'covers' => ['cover-b', 'cover-c', 'cover-d', 'cover-a'],
+                'description' => 'Album debut yang fenomenal dari Olivia Rodrigo dengan lagu hits drivers license.',
+                'tracklist' => [
+                    ['title' => 'Brutal', 'duration' => '2:23'],
+                    ['title' => 'Traitor', 'duration' => '3:49'],
+                    ['title' => 'Drivers License', 'duration' => '4:02'],
+                ],
+            ],
+            'guts' => [
+                'name' => 'GUTS', 'artist' => 'Olivia Rodrigo', 'year' => 2023, 'format' => 'CD', 'price' => 210000, 'stock' => 8, 'label' => 'Geffen Records', 'condition' => 'New', 'genre' => 'Pop', 'covers' => ['cover-c', 'cover-d', 'cover-a', 'cover-b'],
+                'description' => 'Album studio kedua yang memperkuat posisi Olivia Rodrigo di kancah musik global.',
+                'tracklist' => [
+                    ['title' => 'all-american bitch', 'duration' => '2:45'],
+                    ['title' => 'bad idea right?', 'duration' => '3:04'],
+                    ['title' => 'vampire', 'duration' => '3:39'],
+                ],
+            ],
+            'midnights' => [
+                'name' => 'Midnights', 'artist' => 'Taylor Swift', 'year' => 2022, 'format' => 'Vinyl 12"', 'price' => 480000, 'stock' => 12, 'label' => 'Republic Records', 'condition' => 'New', 'genre' => 'Pop', 'covers' => ['cover-d', 'cover-a', 'cover-b', 'cover-c'],
+                'description' => 'Album konsep tentang malam-malam tanpa tidur dalam hidup Taylor Swift.',
+                'tracklist' => [
+                    ['title' => 'Lavender Haze', 'duration' => '3:22'],
+                    ['title' => 'Maroon', 'duration' => '3:38'],
+                    ['title' => 'Anti-Hero', 'duration' => '3:20'],
+                ],
+            ],
+            'the-tortured-poets-department' => [
+                'name' => 'The Tortured Poets Department', 'artist' => 'Taylor Swift', 'year' => 2024, 'format' => 'CD', 'price' => 225000, 'stock' => 15, 'label' => 'Republic Records', 'condition' => 'New', 'genre' => 'Pop', 'covers' => ['cover-a', 'cover-b', 'cover-c', 'cover-d'],
+                'description' => 'Album terbaru Taylor Swift yang mengeksplorasi patah hati dan refleksi puitis.',
+                'tracklist' => [
+                    ['title' => 'Fortnight', 'duration' => '3:48'],
+                    ['title' => 'The Tortured Poets Department', 'duration' => '4:53'],
+                    ['title' => 'Down Bad', 'duration' => '4:21'],
+                ],
+            ],
+            'short-n-sweet' => [
+                'name' => "Short n' Sweet", 'artist' => 'Sabrina Carpenter', 'year' => 2024, 'format' => 'Vinyl 12"', 'price' => 450000, 'stock' => 8, 'label' => 'Island Records', 'condition' => 'New', 'genre' => 'Pop', 'covers' => ['cover-b', 'cover-c', 'cover-d', 'cover-a'],
+                'description' => 'Album pop yang ceria dan penuh energi dari Sabrina Carpenter dengan hits Espresso.',
+                'tracklist' => [
+                    ['title' => 'Taste', 'duration' => '3:12'],
+                    ['title' => 'Please Please Please', 'duration' => '3:06'],
+                    ['title' => 'Espresso', 'duration' => '2:51'],
+                ],
+            ],
+            'definitely-maybe' => [
+                'name' => 'Definitely Maybe', 'artist' => 'Oasis', 'year' => 1994, 'format' => 'Vinyl 12"', 'price' => 460000, 'stock' => 7, 'label' => 'Creation Records', 'condition' => 'Mint', 'genre' => 'Rock', 'covers' => ['cover-c', 'cover-d', 'cover-a', 'cover-b'],
+                'description' => 'Album debut legendaris yang memicu era Britpop di seluruh dunia.',
+                'tracklist' => [
+                    ['title' => "Rock 'n' Roll Star", 'duration' => '5:23'],
+                    ['title' => 'Live Forever', 'duration' => '4:36'],
+                    ['title' => 'Supersonic', 'duration' => '4:43'],
+                ],
+            ],
+            'demon-days' => [
+                'name' => 'Demon Days', 'artist' => 'Gorillaz', 'year' => 2005, 'format' => 'Vinyl 12"', 'price' => 490000, 'stock' => 6, 'label' => 'Parlophone', 'condition' => 'Mint', 'genre' => 'Alternative', 'covers' => ['cover-d', 'cover-a', 'cover-b', 'cover-c'],
+                'description' => 'Karya agung band virtual Gorillaz yang diproduseri oleh Danger Mouse.',
+                'tracklist' => [
+                    ['title' => 'Dirty Harry', 'duration' => '3:50'],
+                    ['title' => 'Feel Good Inc.', 'duration' => '3:41'],
+                    ['title' => 'DARE', 'duration' => '4:04'],
+                ],
+            ],
+            'parklife' => [
+                'name' => 'Parklife', 'artist' => 'Blur', 'year' => 1994, 'format' => 'CD', 'price' => 230000, 'stock' => 5, 'label' => 'Food Records', 'condition' => 'New', 'genre' => 'Rock', 'covers' => ['cover-a', 'cover-b', 'cover-c', 'cover-d'],
+                'description' => 'Album penentu identitas musik Blur dan gerakan Britpop Inggris.',
+                'tracklist' => [
+                    ['title' => 'Girls & Boys', 'duration' => '4:50'],
+                    ['title' => 'Parklife', 'duration' => '3:05'],
+                    ['title' => 'To the End', 'duration' => '4:05'],
+                ],
+            ],
+            'divide' => [
+                'name' => 'Divide (÷)', 'artist' => 'Ed Sheeran', 'year' => 2017, 'format' => 'CD', 'price' => 210000, 'stock' => 10, 'label' => 'Asylum Records', 'condition' => 'New', 'genre' => 'Pop', 'covers' => ['cover-b', 'cover-c', 'cover-d', 'cover-a'],
+                'description' => 'Album tersukses Ed Sheeran yang memuat lagu Shape of You dan Perfect.',
+                'tracklist' => [
+                    ['title' => 'Eraser', 'duration' => '3:47'],
+                    ['title' => 'Castle on the Hill', 'duration' => '4:21'],
+                    ['title' => 'Shape of You', 'duration' => '3:53'],
+                ],
+            ],
+            'nadhif-laman-berikutnya' => [
+                'name' => 'Nadhif (Laman Berikutnya)', 'artist' => 'Nadhif Basalamah', 'year' => 2025, 'format' => 'CD', 'price' => 165000, 'stock' => 14, 'label' => 'Independent', 'condition' => 'New', 'genre' => 'I-Pop', 'covers' => ['cover-c', 'cover-d', 'cover-a', 'cover-b'],
+                'description' => 'Album studio perdana Nadhif Basalamah yang penuh dengan lirik emosional dan hangat.',
+                'tracklist' => [
+                    ['title' => 'Penjaga Hati', 'duration' => '4:02'],
+                    ['title' => 'Tiba-Tiba', 'duration' => '3:15'],
+                    ['title' => 'Laman Berikutnya', 'duration' => '3:45'],
+                ],
+            ],
+            'menari-dengan-bayangan' => [
+                'name' => 'Menari dengan Bayangan', 'artist' => 'Hindia', 'year' => 2019, 'format' => 'CD', 'price' => 170000, 'stock' => 20, 'label' => 'Sun Eater', 'condition' => 'New', 'genre' => 'Indie', 'covers' => ['cover-d', 'cover-a', 'cover-b', 'cover-c'],
+                'description' => 'Album debut legendaris dari Hindia yang menjadi soundtrack kehidupan anak muda perkotaan.',
+                'tracklist' => [
+                    ['title' => 'Evaluasi', 'duration' => '3:24'],
+                    ['title' => 'Secukupnya', 'duration' => '3:27'],
+                    ['title' => 'Rumah ke Rumah', 'duration' => '4:37'],
+                ],
+            ],
+            'centralismo' => [
+                'name' => 'Centralismo', 'artist' => 'Sore', 'year' => 2005, 'format' => 'Vinyl 12"', 'price' => 470000, 'stock' => 4, 'label' => 'Aksara Records', 'condition' => 'Mint', 'genre' => 'Indie', 'covers' => ['cover-a', 'cover-b', 'cover-c', 'cover-d'],
+                'description' => 'Album indie pop retro megah dari Sore yang diakui sebagai salah satu album terbaik Indonesia.',
+                'tracklist' => [
+                    ['title' => 'No Fruits for Today', 'duration' => '4:57'],
+                    ['title' => 'Mata Rantai', 'duration' => '3:45'],
+                    ['title' => 'Funk the Prez', 'duration' => '4:12'],
+                ],
+            ],
+            'nelangsa-pasar-turi' => [
+                'name' => 'Nelangsa Pasar Turi', 'artist' => 'Bilal Indrajaya', 'year' => 2023, 'format' => 'CD', 'price' => 160000, 'stock' => 12, 'label' => 'Aksara Records', 'condition' => 'New', 'genre' => 'Indie', 'covers' => ['cover-b', 'cover-c', 'cover-d', 'cover-a'],
+                'description' => 'Album pop kreatif bernuansa retro 80-an yang menceritakan perjalanan emosional.',
+                'tracklist' => [
+                    ['title' => 'Saujana', 'duration' => '4:08'],
+                    ['title' => 'Niscaya', 'duration' => '3:58'],
+                    ['title' => 'Nelangsa Pasar Turi', 'duration' => '4:21'],
+                ],
+            ],
+            'markers-and-such-pens' => [
+                'name' => 'MARKERS AND SUCH PENS FLASHDISKS', 'artist' => 'Sal Priadi', 'year' => 2024, 'format' => 'CD', 'price' => 180000, 'stock' => 18, 'label' => 'Suhu Records', 'condition' => 'New', 'genre' => 'Indie', 'covers' => ['cover-c', 'cover-d', 'cover-a', 'cover-b'],
+                'description' => 'Album eksploratif Sal Priadi dengan track populer Dari Planet Lain.',
+                'tracklist' => [
+                    ['title' => 'Dari Planet Lain', 'duration' => '3:14'],
+                    ['title' => 'Foto Kita Terluka', 'duration' => '4:02'],
+                    ['title' => 'Gala Bunga Matahari', 'duration' => '3:50'],
+                ],
+            ],
+            'untuk-dunia-cinta-kotornya' => [
+                'name' => 'Untuk Dunia, Cinta, dan Kotornya', 'artist' => 'Nadin Amizah', 'year' => 2023, 'format' => 'CD', 'price' => 175000, 'stock' => 15, 'label' => 'Sorai', 'condition' => 'New', 'genre' => 'Indie', 'covers' => ['cover-d', 'cover-a', 'cover-b', 'cover-c'],
+                'description' => 'Album puitis yang menceritakan keindahan dan kepahitan cinta di dunia nyata.',
+                'tracklist' => [
+                    ['title' => 'Rayuan Perempuan Gila', 'duration' => '3:25'],
+                    ['title' => 'Semua Aku Dirayakan', 'duration' => '4:10'],
+                    ['title' => 'Tawa', 'duration' => '3:30'],
+                ],
+            ],
+            'sialnya-hidup-harus-tetap-berjalan' => [
+                'name' => 'Sialnya, Hidup Harus Tetap Berjalan', 'artist' => 'Bernadya', 'year' => 2024, 'format' => 'CD', 'price' => 165000, 'stock' => 22, 'label' => 'Juni Records', 'condition' => 'New', 'genre' => 'I-Pop', 'covers' => ['cover-a', 'cover-b', 'cover-c', 'cover-d'],
+                'description' => 'Album galau hits yang menggambarkan fase-fase patah hati dan perjuangan untuk bangkit.',
+                'tracklist' => [
+                    ['title' => 'Satu Bulan', 'duration' => '3:28'],
+                    ['title' => 'Kata Mereka Ini Berlebihan', 'duration' => '3:10'],
+                    ['title' => 'Kini Mereka Tahu', 'duration' => '4:02'],
+                ],
+            ],
+            'with-you-th' => [
+                'name' => 'With YOU-th', 'artist' => 'TWICE', 'year' => 2024, 'format' => 'CD', 'price' => 215000, 'stock' => 14, 'label' => 'JYP Entertainment', 'condition' => 'New', 'genre' => 'K-Pop', 'covers' => ['cover-b', 'cover-c', 'cover-d', 'cover-a'],
+                'description' => 'Mini album terbaru TWICE dengan pesona persahabatan yang kuat dan vokal matang.',
+                'tracklist' => [
+                    ['title' => 'I Got You', 'duration' => '3:10'],
+                    ['title' => 'ONE SPARK', 'duration' => '3:03'],
+                    ['title' => 'RUSH', 'duration' => '2:45'],
+                ],
+            ],
+            'memorandum' => [
+                'name' => 'Memorandum', 'artist' => 'Perunggu', 'year' => 2022, 'format' => 'CD', 'price' => 160000, 'stock' => 11, 'label' => 'Visi Records', 'condition' => 'New', 'genre' => 'Rock', 'covers' => ['cover-c', 'cover-d', 'cover-a', 'cover-b'],
+                'description' => 'Album rock kerah biru yang memikat hati pendengar musik tanah air dengan lirik yang relatable.',
+                'tracklist' => [
+                    ['title' => 'Membelah Belantara', 'duration' => '4:21'],
+                    ['title' => 'Ini Sunyi', 'duration' => '3:50'],
+                    ['title' => 'Biang Lara', 'duration' => '4:30'],
+                ],
+            ],
+            'selamat-datang-di-ujung-dunia' => [
+                'name' => 'Selamat Datang di Ujung Dunia', 'artist' => 'Lomba Sihir', 'year' => 2021, 'format' => 'CD', 'price' => 160000, 'stock' => 9, 'label' => 'Sun Eater', 'condition' => 'New', 'genre' => 'Indie', 'covers' => ['cover-d', 'cover-a', 'cover-b', 'cover-c'],
+                'description' => 'Album potret satir kehidupan kota Jakarta yang dibalut dengan synth pop ceria.',
+                'tracklist' => [
+                    ['title' => 'Hati dan Paru-Paru', 'duration' => '3:12'],
+                    ['title' => 'Apa Ada Asmara', 'duration' => '3:45'],
+                    ['title' => 'Pesona', 'duration' => '3:56'],
+                ],
+            ],
+            'lyodra-self-titled' => [
+                'name' => 'Lyodra', 'artist' => 'Lyodra', 'year' => 2021, 'format' => 'CD', 'price' => 155000, 'stock' => 15, 'label' => 'Universal Music Indonesia', 'condition' => 'New', 'genre' => 'I-Pop', 'covers' => ['cover-a', 'cover-b', 'cover-c', 'cover-d'],
+                'description' => 'Album debut dari juara Indonesian Idol Lyodra Ginting dengan kekuatan vokal megah.',
+                'tracklist' => [
+                    ['title' => 'Pesan Terakhir', 'duration' => '3:45'],
+                    ['title' => 'Mengapa Kita #terlanjurmencinta', 'duration' => '3:52'],
+                    ['title' => 'Sabda Rindu', 'duration' => '3:20'],
+                ],
+            ],
+            'rahasia-pertama' => [
+                'name' => 'Rahasia Pertama', 'artist' => 'Rony Parulian', 'year' => 2025, 'format' => 'CD', 'price' => 160000, 'stock' => 13, 'label' => 'Universal Music Indonesia', 'condition' => 'New', 'genre' => 'I-Pop', 'covers' => ['cover-b', 'cover-c', 'cover-d', 'cover-a'],
+                'description' => 'Album debut Rony Parulian dengan karakter vokal rock romantis yang khas.',
+                'tracklist' => [
+                    ['title' => 'Mengapa', 'duration' => '4:02'],
+                    ['title' => 'Pesona Sederhana', 'duration' => '3:30'],
+                    ['title' => 'Tak Ada Yang Sepertimu', 'duration' => '3:45'],
+                ],
+            ],
+            'reality-club-presents' => [
+                'name' => 'Reality Club Presents...', 'artist' => 'Reality Club', 'year' => 2023, 'format' => 'Vinyl 12"', 'price' => 450000, 'stock' => 8, 'label' => 'Dominion Records', 'condition' => 'New', 'genre' => 'Indie', 'covers' => ['cover-c', 'cover-d', 'cover-a', 'cover-b'],
+                'description' => 'Album konsep sinematik indie rock dengan track populer Love You Like I Do.',
+                'tracklist' => [
+                    ['title' => 'Amour Show', 'duration' => '3:20'],
+                    ['title' => 'Love You Like I Do', 'duration' => '3:45'],
+                    ['title' => 'Desire', 'duration' => '4:10'],
+                ],
+            ],
+            'motomami' => [
+                'name' => 'MOTOMAMI', 'artist' => 'Rosalía', 'year' => 2022, 'format' => 'CD', 'price' => 230000, 'stock' => 7, 'label' => 'Columbia Records', 'condition' => 'New', 'genre' => 'Pop', 'covers' => ['cover-d', 'cover-a', 'cover-b', 'cover-c'],
+                'description' => 'Album eksperimental Rosalía yang menggabungkan flamenco tradisional dengan reggaeton modern.',
+                'tracklist' => [
+                    ['title' => 'SAOKO', 'duration' => '2:17'],
+                    ['title' => 'CANDY', 'duration' => '3:13'],
+                    ['title' => 'CHICKEN TERIYAKI', 'duration' => '2:02'],
+                ],
+            ],
+            'eternal-sunshine' => [
+                'name' => 'Eternal Sunshine', 'artist' => 'Ariana Grande', 'year' => 2024, 'format' => 'CD', 'price' => 220000, 'stock' => 12, 'label' => 'Republic Records', 'condition' => 'New', 'genre' => 'Pop', 'covers' => ['cover-a', 'cover-b', 'cover-c', 'cover-d'],
+                'description' => 'Album pop manis dengan sentuhan R&B khas Ariana Grande yang merajai tangga lagu.',
+                'tracklist' => [
+                    ['title' => 'yes, and?', 'duration' => '3:34'],
+                    ['title' => "we can't be friends", 'duration' => '3:48'],
+                    ['title' => 'eternal sunshine', 'duration' => '3:30'],
+                ],
+            ],
+            'hit-me-hard-and-soft' => [
+                'name' => 'Hit Me Hard and Soft', 'artist' => 'Billie Eilish', 'year' => 2024, 'format' => 'Vinyl 12"', 'price' => 470000, 'stock' => 10, 'label' => 'Darkroom / Interscope', 'condition' => 'New', 'genre' => 'Pop', 'covers' => ['cover-b', 'cover-c', 'cover-d', 'cover-a'],
+                'description' => 'Album studio ketiga Billie Eilish dengan produksi memukau dari Finneas.',
+                'tracklist' => [
+                    ['title' => 'SKINNY', 'duration' => '3:39'],
+                    ['title' => 'LUNCH', 'duration' => '3:00'],
+                    ['title' => 'CHIHIRO', 'duration' => '5:03'],
+                ],
+            ],
+            'cosmic-red-velvet' => [
+                'name' => 'Cosmic', 'artist' => 'Red Velvet', 'year' => 2024, 'format' => 'CD', 'price' => 210000, 'stock' => 11, 'label' => 'SM Entertainment', 'condition' => 'New', 'genre' => 'K-Pop', 'covers' => ['cover-c', 'cover-d', 'cover-a', 'cover-b'],
+                'description' => 'Mini album spesial Red Velvet merayakan hari jadi dengan track utama Cosmic.',
+                'tracklist' => [
+                    ['title' => 'Cosmic', 'duration' => '3:42'],
+                    ['title' => 'Sunflower', 'duration' => '3:18'],
+                    ['title' => 'Night Drive', 'duration' => '3:30'],
+                ],
+            ],
+            'ive-switch' => [
+                'name' => 'IVE SWITCH', 'artist' => 'IVE', 'year' => 2024, 'format' => 'CD', 'price' => 210000, 'stock' => 14, 'label' => 'Starship Entertainment', 'condition' => 'New', 'genre' => 'K-Pop', 'covers' => ['cover-d', 'cover-a', 'cover-b', 'cover-c'],
+                'description' => 'EP terbaru IVE dengan konsep magis dan transformasi musik yang berani.',
+                'tracklist' => [
+                    ['title' => 'HEYA', 'duration' => '3:10'],
+                    ['title' => 'Accendio', 'duration' => '3:12'],
+                    ['title' => 'Ice Queen', 'duration' => '3:05'],
+                ],
+            ],
+            'akibat-pergaulan-blues' => [
+                'name' => 'Akibat Pergaulan Blues', 'artist' => 'Jason Ranti', 'year' => 2017, 'format' => 'CD', 'price' => 155000, 'stock' => 8, 'label' => 'Demajors', 'condition' => 'New', 'genre' => 'Indie', 'covers' => ['cover-a', 'cover-b', 'cover-c', 'cover-d'],
+                'description' => 'Album kritik sosial sarkastik dan humoris yang sangat populer dari Jason Ranti.',
+                'tracklist' => [
+                    ['title' => 'Variasi Pink', 'duration' => '4:21'],
+                    ['title' => 'Bahaya Komunis', 'duration' => '3:50'],
+                    ['title' => 'Kafir', 'duration' => '4:10'],
+                ],
+            ],
+            'fourever-day6' => [
+                'name' => 'Fourever', 'artist' => 'DAY6', 'year' => 2024, 'format' => 'CD', 'price' => 215000, 'stock' => 12, 'label' => 'JYP Entertainment', 'condition' => 'New', 'genre' => 'K-Pop', 'covers' => ['cover-b', 'cover-c', 'cover-d', 'cover-a'],
+                'description' => 'Album comeback DAY6 setelah wajib militer dengan lagu hits Welcome to the Show.',
+                'tracklist' => [
+                    ['title' => 'Welcome to the Show', 'duration' => '3:37'],
+                    ['title' => 'HAPPY', 'duration' => '3:09'],
+                    ['title' => 'The Power of Love', 'duration' => '3:22'],
+                ],
+            ],
+            'buzz-niki' => [
+                'name' => 'Buzz', 'artist' => 'NIKI', 'year' => 2024, 'format' => 'Vinyl 12"', 'price' => 460000, 'stock' => 9, 'label' => '88rising', 'condition' => 'New', 'genre' => 'Pop', 'covers' => ['cover-c', 'cover-d', 'cover-a', 'cover-b'],
+                'description' => 'Album terbaru NIKI yang menceritakan fase kedewasaan dan refleksi kehidupan.',
+                'tracklist' => [
+                    ['title' => 'Buzz', 'duration' => '3:12'],
+                    ['title' => 'Too Much Of A Good Thing', 'duration' => '2:45'],
+                    ['title' => 'Blue Moon', 'duration' => '3:50'],
+                ],
+            ],
+            'nonaria-self-titled' => [
+                'name' => 'NonaRia', 'artist' => 'NonaRia', 'year' => 2018, 'format' => 'CD', 'price' => 155000, 'stock' => 6, 'label' => 'Demajors', 'condition' => 'New', 'genre' => 'Pop', 'covers' => ['cover-d', 'cover-a', 'cover-b', 'cover-c'],
+                'description' => 'Album retro pop-jazz ceria khas NonaRia dengan lirik kocak bertema kehidupan sehari-hari.',
+                'tracklist' => [
+                    ['title' => 'Maling Jemuran', 'duration' => '2:50'],
+                    ['title' => 'Santai', 'duration' => '3:15'],
+                    ['title' => 'Antri', 'duration' => '3:02'],
+                ],
+            ],
         ];
     }
 }

@@ -29,14 +29,19 @@
     <div class="hero-media">
         <div class="hero-cover">
             <div class="cover-back"></div>
-            @php($abbeyPhoto = file_exists(public_path('images/products/abbey-road.jpg')) ? asset('images/products/abbey-road.jpg') : null)
-            <div class="cover-main {{ $abbeyPhoto ? 'has-photo' : '' }}" @if($abbeyPhoto) style="background-image:url('{{ $abbeyPhoto }}');" @endif>
+            @php($coverPhoto = file_exists(public_path('images/covers/heavy-serenade.jpg')) ? asset('images/covers/heavy-serenade.jpg') : (file_exists(public_path('images/products/heavy-serenade.jpg')) ? asset('images/products/heavy-serenade.jpg') : null))
+            <div class="cover-main {{ $coverPhoto ? 'has-photo' : '' }}" @if($coverPhoto) style="background-image:url('{{ $coverPhoto }}');" @endif>
                 <div class="cover-label">
-                    <span class="mono">REC-048</span>
-                    <span>Abbey Road</span>
+                    <span class="mono">REC-042</span>
+                    <span>Heavy Serenade</span>
                 </div>
             </div>
-            <div class="vinyl"></div>
+            <div class="vinyl">
+                @php($labelPhoto = file_exists(public_path('images/products/olivia-rodrigo-label.jpg')) ? asset('images/products/olivia-rodrigo-label.jpg') : null)
+                @if($labelPhoto)
+                    <div class="vinyl-label" style="background-image:url('{{ $labelPhoto }}');"></div>
+                @endif
+            </div>
             <div class="hero-stamp">Limited Pressing</div>
         </div>
     </div>
