@@ -1154,6 +1154,150 @@ class ProductSeeder extends Seeder
                     ['title' => 'She Smiled', 'duration' => '3:30'],
                 ],
             ],
+            'manusia-tulus' => [
+                'name' => 'Manusia', 'artist' => 'Tulus', 'year' => 2022, 'format' => 'CD', 'price' => 160000, 'stock' => 14, 'label' => 'TulusCompany', 'condition' => 'New', 'genre' => 'Pop', 'covers' => ['cover-a', 'cover-b', 'cover-c', 'cover-d'],
+                'description' => 'Album studio kelima Tulus dengan hits Hati-Hati di Jalan yang memecahkan rekor streaming.',
+                'tracklist' => [
+                    ['title' => 'Tujuh Belas', 'duration' => '3:42'],
+                    ['title' => 'Hati-Hati di Jalan', 'duration' => '4:02'],
+                    ['title' => 'Diri', 'duration' => '3:30'],
+                ],
+            ],
+            'mantra-mantra-kunto-aji' => [
+                'name' => 'Mantra Mantra', 'artist' => 'Kunto Aji', 'year' => 2018, 'format' => 'CD', 'price' => 155000, 'stock' => 10, 'label' => 'Juni Records', 'condition' => 'New', 'genre' => 'Pop', 'covers' => ['cover-b', 'cover-c', 'cover-d', 'cover-a'],
+                'description' => 'Album bertema kesehatan mental dengan hits Rehat dan Pilu Membiru.',
+                'tracklist' => [
+                    ['title' => 'Rehat', 'duration' => '5:08'],
+                    ['title' => 'Pilu Membiru', 'duration' => '4:12'],
+                    ['title' => 'Topik Semalam', 'duration' => '4:21'],
+                ],
+            ],
+            'sentimental-juicy-luicy' => [
+                'name' => 'Sentimental', 'artist' => 'Juicy Luicy', 'year' => 2020, 'format' => 'CD', 'price' => 145000, 'stock' => 12, 'label' => 'E-Motion Entertainment', 'condition' => 'New', 'genre' => 'Pop', 'covers' => ['cover-c', 'cover-d', 'cover-a', 'cover-b'],
+                'description' => 'Album debut Juicy Luicy berisi hits Lantas dan Tanpa Tergesa.',
+                'tracklist' => [
+                    ['title' => 'Lantas', 'duration' => '3:50'],
+                    ['title' => 'Tanpa Tergesa', 'duration' => '3:45'],
+                    ['title' => 'Mawar Jingga', 'duration' => '3:58'],
+                ],
+            ],
+            'kisah-klasik-sheila-on-7' => [
+                'name' => 'Kisah Klasik Untuk Masa Depan', 'artist' => 'Sheila On 7', 'year' => 2000, 'format' => 'Kaset', 'price' => 125000, 'stock' => 5, 'label' => 'Sony Music', 'condition' => 'New', 'genre' => 'Pop', 'covers' => ['cover-d', 'cover-a', 'cover-b', 'cover-c'],
+                'description' => 'Album legendaris Sheila On 7 dengan hits Sephia dan Bila Kau Tak Disampingku.',
+                'tracklist' => [
+                    ['title' => 'Bila Kau Tak Disampingku', 'duration' => '4:20'],
+                    ['title' => 'Sephia', 'duration' => '4:45'],
+                    ['title' => 'Sebuah Kisah Klasik', 'duration' => '3:48'],
+                ],
+            ],
+            'bintang-lima-dewa-19' => [
+                'name' => 'Bintang Lima', 'artist' => 'Dewa 19', 'year' => 2000, 'format' => 'Vinyl 12"', 'price' => 500000, 'stock' => 6, 'label' => 'Aquarius Musikindo', 'condition' => 'New', 'genre' => 'Rock', 'covers' => ['cover-a', 'cover-b', 'cover-c', 'cover-d'],
+                'description' => 'Album terlaris Dewa 19 yang memperkenalkan Once Mekel sebagai vokalis utama.',
+                'tracklist' => [
+                    ['title' => 'Roman Picisan', 'duration' => '4:02'],
+                    ['title' => 'Dua Sejoli', 'duration' => '5:24'],
+                    ['title' => 'Separuh Nafas', 'duration' => '5:01'],
+                ],
+            ],
+            'new-jeans-ep' => [
+                'name' => 'New Jeans', 'artist' => 'NewJeans', 'year' => 2022, 'format' => 'CD', 'price' => 185000, 'stock' => 15, 'label' => 'ADOR', 'condition' => 'New', 'genre' => 'K-Pop', 'covers' => ['cover-b', 'cover-c', 'cover-d', 'cover-a'],
+                'description' => 'Mini album debut fenomenal NewJeans berisi hits Attention, Hype Boy, dan Cookie.',
+                'tracklist' => [
+                    ['title' => 'Attention', 'duration' => '3:00'],
+                    ['title' => 'Hype Boy', 'duration' => '2:59'],
+                    ['title' => 'Cookie', 'duration' => '3:55'],
+                ],
+            ],
+            'unforgiven-le-sserafim' => [
+                'name' => 'UNFORGIVEN', 'artist' => 'LE SSERAFIM', 'year' => 2023, 'format' => 'CD', 'price' => 200000, 'stock' => 11, 'label' => 'Source Music', 'condition' => 'New', 'genre' => 'K-Pop', 'covers' => ['cover-c', 'cover-d', 'cover-a', 'cover-b'],
+                'description' => 'Album studio pertama LE SSERAFIM dengan pesan berani untuk keluar dari aturan dunia.',
+                'tracklist' => [
+                    ['title' => 'UNFORGIVEN (feat. Nile Rodgers)', 'duration' => '3:02'],
+                    ['title' => 'No-Return (Into the unknown)', 'duration' => '3:04'],
+                    ['title' => 'Eve, Psyche & The Bluebeard\'s Wife', 'duration' => '3:06'],
+                ],
+            ],
+            'ive-ive-album' => [
+                'name' => 'I\'ve IVE', 'artist' => 'IVE', 'year' => 2023, 'format' => 'CD', 'price' => 205000, 'stock' => 13, 'label' => 'Starship Entertainment', 'condition' => 'New', 'genre' => 'K-Pop', 'covers' => ['cover-d', 'cover-a', 'cover-b', 'cover-c'],
+                'description' => 'Album studio pertama IVE dengan hits I AM dan Kitsch.',
+                'tracklist' => [
+                    ['title' => 'Blue Blood', 'duration' => '3:08'],
+                    ['title' => 'I AM', 'duration' => '3:03'],
+                    ['title' => 'Kitsch', 'duration' => '3:15'],
+                ],
+            ],
+            'armageddon-aespa' => [
+                'name' => 'Armageddon', 'artist' => 'aespa', 'year' => 2024, 'format' => 'CD', 'price' => 210000, 'stock' => 16, 'label' => 'SM Entertainment', 'condition' => 'New', 'genre' => 'K-Pop', 'covers' => ['cover-a', 'cover-b', 'cover-c', 'cover-d'],
+                'description' => 'Album studio pertama aespa dengan title track Supernova dan Armageddon.',
+                'tracklist' => [
+                    ['title' => 'Supernova', 'duration' => '2:59'],
+                    ['title' => 'Armageddon', 'duration' => '3:17'],
+                    ['title' => 'Live My Life', 'duration' => '2:40'],
+                ],
+            ],
+            'ready-to-be-twice' => [
+                'name' => 'READY TO BE', 'artist' => 'TWICE', 'year' => 2023, 'format' => 'CD', 'price' => 200000, 'stock' => 14, 'label' => 'JYP Entertainment', 'condition' => 'New', 'genre' => 'K-Pop', 'covers' => ['cover-b', 'cover-c', 'cover-d', 'cover-a'],
+                'description' => 'Mini album ke-12 TWICE dengan hits SET ME FREE dan Moonlight Sunrise.',
+                'tracklist' => [
+                    ['title' => 'SET ME FREE', 'duration' => '3:01'],
+                    ['title' => 'Moonlight Sunrise', 'duration' => '3:00'],
+                    ['title' => 'WALLFLOWER', 'duration' => '2:56'],
+                ],
+            ],
+            'ate-stray-kids' => [
+                'name' => 'ATE', 'artist' => 'Stray Kids', 'year' => 2024, 'format' => 'CD', 'price' => 215000, 'stock' => 18, 'label' => 'JYP Entertainment', 'condition' => 'New', 'genre' => 'K-Pop', 'covers' => ['cover-c', 'cover-d', 'cover-a', 'cover-b'],
+                'description' => 'Mini album terbaru Stray Kids dengan track utama Chk Chk Boom.',
+                'tracklist' => [
+                    ['title' => 'Chk Chk Boom', 'duration' => '2:28'],
+                    ['title' => 'MOUNTAIN', 'duration' => '2:36'],
+                    ['title' => 'JJAM', 'duration' => '2:44'],
+                ],
+            ],
+            'when-we-all-fall-asleep-billie-eilish' => [
+                'name' => 'WHEN WE ALL FALL ASLEEP, WHERE DO WE GO?', 'artist' => 'Billie Eilish', 'year' => 2019, 'format' => 'Vinyl 12"', 'price' => 460000, 'stock' => 8, 'label' => 'Darkroom/Interscope', 'condition' => 'New', 'genre' => 'Pop', 'covers' => ['cover-d', 'cover-a', 'cover-b', 'cover-c'],
+                'description' => 'Album debut pemenang Grammy dari Billie Eilish berisi hits bad guy dan bury a friend.',
+                'tracklist' => [
+                    ['title' => 'bad guy', 'duration' => '3:14'],
+                    ['title' => 'bury a friend', 'duration' => '3:13'],
+                    ['title' => 'when the party\'s over', 'duration' => '3:16'],
+                ],
+            ],
+            'happier-than-ever-billie-eilish' => [
+                'name' => 'Happier Than Ever', 'artist' => 'Billie Eilish', 'year' => 2021, 'format' => 'Vinyl 12"', 'price' => 470000, 'stock' => 9, 'label' => 'Darkroom/Interscope', 'condition' => 'New', 'genre' => 'Pop', 'covers' => ['cover-a', 'cover-b', 'cover-c', 'cover-d'],
+                'description' => 'Album studio kedua Billie Eilish dengan aransemen yang lebih matang dan personal.',
+                'tracklist' => [
+                    ['title' => 'Getting Older', 'duration' => '4:04'],
+                    ['title' => 'NDA', 'duration' => '3:09'],
+                    ['title' => 'Happier Than Ever', 'duration' => '4:58'],
+                ],
+            ],
+            'future-nostalgia-dua-lipa' => [
+                'name' => 'Future Nostalgia', 'artist' => 'Dua Lipa', 'year' => 2020, 'format' => 'Vinyl 12"', 'price' => 450000, 'stock' => 7, 'label' => 'Warner Records', 'condition' => 'New', 'genre' => 'Pop', 'covers' => ['cover-b', 'cover-c', 'cover-d', 'cover-a'],
+                'description' => 'Album dance pop retro-futuristik pemenang Grammy berisi hits Don\'t Start Now.',
+                'tracklist' => [
+                    ['title' => 'Future Nostalgia', 'duration' => '3:04'],
+                    ['title' => 'Don\'t Start Now', 'duration' => '3:03'],
+                    ['title' => 'Physical', 'duration' => '3:13'],
+                ],
+            ],
+            'emails-i-cant-send-sabrina-carpenter' => [
+                'name' => 'Emails I Can\'t Send', 'artist' => 'Sabrina Carpenter', 'year' => 2022, 'format' => 'CD', 'price' => 190000, 'stock' => 10, 'label' => 'Island Records', 'condition' => 'New', 'genre' => 'Pop', 'covers' => ['cover-c', 'cover-d', 'cover-a', 'cover-b'],
+                'description' => 'Album studio kelima Sabrina Carpenter berisi hits Nonsense dan Feather.',
+                'tracklist' => [
+                    ['title' => 'Emails I Can\'t Send', 'duration' => '1:44'],
+                    ['title' => 'Nonsense', 'duration' => '2:43'],
+                    ['title' => 'Feather', 'duration' => '3:10'],
+                ],
+            ],
+            'thank-u-next-ariana-grande' => [
+                'name' => 'thank u, next', 'artist' => 'Ariana Grande', 'year' => 2019, 'format' => 'CD', 'price' => 195000, 'stock' => 12, 'label' => 'Republic Records', 'condition' => 'New', 'genre' => 'Pop', 'covers' => ['cover-d', 'cover-a', 'cover-b', 'cover-c'],
+                'description' => 'Album pop R&B ikonik Ariana Grande berisi hits 7 rings dan thank u, next.',
+                'tracklist' => [
+                    ['title' => 'imagine', 'duration' => '3:32'],
+                    ['title' => '7 rings', 'duration' => '2:58'],
+                    ['title' => 'thank u, next', 'duration' => '3:27'],
+                ],
+            ],
         ];
     }
 }
