@@ -19,7 +19,9 @@ RUN cp .env.railway .env \
     && touch database/database.sqlite \
     && chmod -R 777 storage bootstrap/cache database
 
-# Saat container start: symlink storage, migrasi, lalu jalankan server.
-CMD php artisan storage:link || true; \
+# Saat container start: clear cache, symlink storage, migrasi, lalu jalankan server.
+CMD php artisan config:clear || true; \
+    php artisan cache:clear || true; \
+    php artisan storage:link || true; \
     php artisan migrate --force --seed || true; \
     php artisan serve --host=0.0.0.0 --port=${PORT:-8080}
