@@ -64,6 +64,16 @@ SVG;
      */
     public static function forArticle(string $slug, string $title, string $category, int $index): string
     {
+        $jpgPath = 'images/articles/' . $slug . '.jpg';
+        if (file_exists(public_path($jpgPath))) {
+            return $jpgPath;
+        }
+
+        $pngPath = 'images/articles/' . $slug . '.png';
+        if (file_exists(public_path($pngPath))) {
+            return $pngPath;
+        }
+
         [$dark, $light] = self::PALETTES[($index + 3) % count(self::PALETTES)];
 
         $cat = self::esc(strtoupper($category));
